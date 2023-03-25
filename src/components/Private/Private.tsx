@@ -10,6 +10,7 @@ const PrivateRoutes = ({ children }: any) => {
     return children;
   } else {
     navigate("/", { replace: true });
+    // window.location.reload();
   }
 };
 
