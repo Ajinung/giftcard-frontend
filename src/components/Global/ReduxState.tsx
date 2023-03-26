@@ -21,6 +21,8 @@ const ReduxState = createSlice({
   },
 });
 
+export const dummy_user = { name: "Andrea", role: "user" };
+
 export const { login, logout } = ReduxState.actions;
 
 export default ReduxState.reducer;

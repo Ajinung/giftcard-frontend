@@ -201,8 +201,7 @@ const BizzSignUp = () => {
                 margin: "0",
                 marginLeft: "10px",
                 fontSize: "15px",
-              }}
-            >
+              }}>
               I agree to MAVERICK'S
               <span style={{ color: "blue" }}>Terms and Conditions</span> &
               <span style={{ color: "blue" }}>Privacy Policy</span>.

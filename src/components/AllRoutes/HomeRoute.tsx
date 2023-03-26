@@ -7,24 +7,33 @@ import Register from "../Auth/Register";
 import SelectAccount from "../Auth/SelectAccount";
 import { useAppSelector } from "../Global/Store";
 import Homescreen from "../LandingPage/Homescreen";
+import { dummy_user } from "../Global/ReduxState";
+import DefaultScreen from "../DefaultScreen";
 
 const HomeRoute = () => {
-  const user = useAppSelector((state) => state.bizClient);
-
   const navigate = useNavigate();
 
+  // const user = useAppSelector((state) => state.bizClient);
   useEffect(() => {
-    if (user?.status === "Business") {
-      navigate("/business/dashboard", { replace: true });
-    } else if (user?.status === "User") {
-      navigate("/user/dashboard", { replace: true });
+    if (dummy_user?.role === "admin") {
+      navigate("/dashboard", { replace: true });
+    } else if (dummy_user?.role === "user") {
+      navigate("/user-dashboard", { replace: true });
     }
   }, []);
+
+  // useEffect(() => {
+  //   if (user?.status === "Business") {
+  //     navigate("/business/dashboard", { replace: true });
+  //   } else if (user?.status === "User") {
+  //     navigate("/user/dashboard", { replace: true });
+  //   }
+  // }, []);
 
   const elements = useRoutes([
     {
       path: "/",
-      element: <Homescreen />,
+      element: <DefaultScreen />,
     },
     {
       path: "/select-account",

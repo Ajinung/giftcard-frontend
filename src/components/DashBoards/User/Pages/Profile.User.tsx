@@ -1,16 +1,16 @@
 import React from "react";
 import styled from "styled-components";
-// import pic from "../Images/trancard.svg";
-import CreateCard from "../Props/CreateCard";
-import ViewCards from "../Props/ViewCards";
-const BusinessCard = () => {
+import PersonalAccount from "../Props/Person.Account";
+import SecureAccount from "../Props/Secure.Account";
+
+const UserProfile = () => {
   const [person, setPerson] = React.useState(true);
   const [secure, setSecure] = React.useState(false);
   return (
     <Container>
       <Head>
         <HoldToggle>
-          <h2>Gift Cards</h2>
+          <h2>Account</h2>
           <ToggleHold>
             <Toggle
               onClick={() => {
@@ -19,7 +19,7 @@ const BusinessCard = () => {
               }}
               cls={person ? "#2343f7" : "#585858"}
               bdb={person ? "3px solid #2343f7" : ""}>
-              New Gift Card
+              Personal
             </Toggle>
             <Toggle
               onClick={() => {
@@ -28,17 +28,25 @@ const BusinessCard = () => {
               }}
               cls={person ? "#585858" : "#2343f7"}
               bdb={person ? "" : "3px solid #2343f7"}>
-              Gift Cards
+              Security
             </Toggle>
           </ToggleHold>
         </HoldToggle>
-        {person ? <CreateCard /> : <ViewCards />}
+        {person ? (
+          <>
+            <PersonalAccount />
+          </>
+        ) : (
+          <>
+            <SecureAccount />
+          </>
+        )}
       </Head>
     </Container>
   );
 };
 
-export default BusinessCard;
+export default UserProfile;
 
 const Container = styled.div`
   width: 100vw;
@@ -56,13 +64,8 @@ const HoldToggle = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  color: #5e5d5d;
   h2 {
     font-size: 17px;
-    font-weight: 600;
-    @media screen and (min-width: 800px) {
-      font-size: 35px;
-    }
   }
 `;
 const ToggleHold = styled.div`
@@ -76,9 +79,6 @@ const Toggle = styled.div<{ cls: string; bdb: string }>`
   display: flex;
   justify-content: center;
   cursor: pointer;
-  @media screen and (min-width: 800px) {
-    font-size: 17px;
-  }
   color: ${(props) => props.cls};
   border-bottom: ${(props) => props.bdb};
 `;
@@ -96,42 +96,4 @@ const Button = styled.div`
   :hover {
     background-color: #940294;
   }
-`;
-
-const Nothing = styled.div`
-  width: 100%;
-  height: calc(100vh - 205px);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-`;
-const CenterHold = styled.div`
-  color: lightgray;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-`;
-const Pic = styled.div`
-  display: flex;
-  justify-content: center;
-  margin-bottom: 20px;
-  width: 200px;
-  height: 200px;
-  img {
-    height: 100%;
-    width: 100%;
-    object-fit: contain;
-    object-position: center;
-    border-radius: 50%;
-  }
-`;
-const Txt = styled.div`
-  font-size: 14px;
-  color: gray;
-  font-weight: bold;
-`;
-const Sxt = styled.div`
-  font-size: 12px;
-  max-width: 250px;
 `;

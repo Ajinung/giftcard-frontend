@@ -1,44 +1,21 @@
 import React from "react";
 import styled from "styled-components";
 // import pic from "../Images/trancard.svg";
-import CreateCard from "../Props/CreateCard";
-import ViewCards from "../Props/ViewCards";
-const BusinessCard = () => {
-  const [person, setPerson] = React.useState(true);
-  const [secure, setSecure] = React.useState(false);
+import OnlyViewCards from "./OnlyView";
+const UserCards = () => {
   return (
     <Container>
       <Head>
         <HoldToggle>
-          <h2>Gift Cards</h2>
-          <ToggleHold>
-            <Toggle
-              onClick={() => {
-                setPerson(true);
-                setSecure(false);
-              }}
-              cls={person ? "#2343f7" : "#585858"}
-              bdb={person ? "3px solid #2343f7" : ""}>
-              New Gift Card
-            </Toggle>
-            <Toggle
-              onClick={() => {
-                setPerson(false);
-                setSecure(true);
-              }}
-              cls={person ? "#585858" : "#2343f7"}
-              bdb={person ? "" : "3px solid #2343f7"}>
-              Gift Cards
-            </Toggle>
-          </ToggleHold>
+          <h2>My Gift Cards</h2>
         </HoldToggle>
-        {person ? <CreateCard /> : <ViewCards />}
+        <OnlyViewCards />
       </Head>
     </Container>
   );
 };
 
-export default BusinessCard;
+export default UserCards;
 
 const Container = styled.div`
   width: 100vw;
@@ -59,7 +36,6 @@ const HoldToggle = styled.div`
   color: #5e5d5d;
   h2 {
     font-size: 17px;
-    font-weight: 600;
     @media screen and (min-width: 800px) {
       font-size: 35px;
     }

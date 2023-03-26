@@ -1,15 +1,16 @@
 import React from "react";
-import BusinessRoute from "./components/AllRoutes/BusinessRoute";
 import HomeRoute from "./components/AllRoutes/HomeRoute";
-import PrivateRoute from "./components/PrivateRoute/PrivateRoute";
-
+import PrivateRoutes from "./components/Private/Private";
+import { dummy_user } from "./components/Global/ReduxState";
+import BusinessRoutes from "./components/AllRoutes/BusinessRoute";
+import UserRoutes from "./components/AllRoutes/UserRoutes";
 function App() {
   return (
     <div>
       <HomeRoute />
-      {/* <PrivateRoute> */}
-      <BusinessRoute />
-      {/* </PrivateRoute> */}
+      <PrivateRoutes>
+        {dummy_user.role === "admin" ? <BusinessRoutes /> : <UserRoutes />}
+      </PrivateRoutes>
     </div>
   );
 }

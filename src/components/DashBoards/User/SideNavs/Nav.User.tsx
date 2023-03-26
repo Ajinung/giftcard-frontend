@@ -20,11 +20,14 @@ const SideNav = () => {
   const [support, setSupport] = React.useState(true);
   const [account, setAccount] = React.useState(true);
   const [logout, setLogout] = React.useState(true);
+  const [show, setShow] = React.useState(true);
   const navigate = useNavigate();
-
+  const removeSide = () => {
+    setShow(false);
+  };
   return (
     <div>
-      <Container>
+      <Container dsp={show ? "flex" : "none"}>
         <Logo>GIFTHAVEN</Logo>
         <br />
         <br />
@@ -36,10 +39,9 @@ const SideNav = () => {
               setTrans(true);
               setWallet(true);
               setNotify(true);
-              setSupport(true);
-              setAccount(true);
               setLogout(true);
-              navigate("/dashboard");
+
+              navigate("/user-dashboard");
             }}>
             <NavBars
               pic={<HiHome />}
@@ -55,14 +57,13 @@ const SideNav = () => {
               setTrans(false);
               setWallet(true);
               setNotify(true);
-              setSupport(true);
-              setAccount(true);
               setLogout(true);
-              navigate("/dashboard/giftcard");
+
+              navigate("/user-dashboard/profile");
             }}>
             <NavBars
               pic={<MdInsertChart />}
-              routeName="Gift Cards"
+              routeName="My Profile"
               cl={trans ? "#d1abf5" : "white"}
               bd={trans ? "" : "4px solid white"}
               hov={trans ? " #4c2be2" : ""}
@@ -74,14 +75,12 @@ const SideNav = () => {
               setTrans(true);
               setWallet(false);
               setNotify(true);
-              setSupport(true);
-              setAccount(true);
               setLogout(true);
-              navigate("/dashboard/wallet");
+              navigate("/user-dashboard/mycards");
             }}>
             <NavBars
               pic={<FaWallet />}
-              routeName="Wallet"
+              routeName="My Gift Cards"
               cl={wallet ? "#d1abf5" : "white"}
               bd={wallet ? "" : "4px solid white"}
               hov={wallet ? " #4c2be2" : ""}
@@ -93,66 +92,27 @@ const SideNav = () => {
               setTrans(true);
               setWallet(true);
               setNotify(false);
-              setSupport(true);
-              setAccount(true);
+
               setLogout(true);
-              navigate("/dashboard/notify");
+              navigate("/user-dashboard/notify");
             }}>
             <NavBars
               pic={<HiBell />}
-              routeName="Notification"
+              routeName="Notifications"
               cl={notify ? "#d1abf5" : "white"}
               bd={notify ? "" : "4px solid white"}
               hov={notify ? " #4c2be2" : ""}
             />
           </div>
-          <div
-            onClick={() => {
-              setHome(true);
-              setTrans(true);
-              setWallet(true);
-              setNotify(true);
-              setSupport(false);
-              setAccount(true);
-              setLogout(true);
-              navigate("/dashboard/support");
-            }}>
-            <NavBars
-              pic={<AiFillMessage />}
-              routeName="Support"
-              cl={support ? "#d1abf5" : "white"}
-              bd={support ? "" : "4px solid white"}
-              hov={support ? " #4c2be2" : ""}
-            />
-          </div>
-          <div
-            onClick={() => {
-              setHome(true);
-              setTrans(true);
-              setWallet(true);
-              setNotify(true);
-              setSupport(true);
-              setAccount(false);
-              setLogout(true);
-              navigate("/dashboard/account");
-            }}>
-            <NavBars
-              pic={<BsPersonFill />}
-              routeName="Account"
-              cl={account ? "#d1abf5" : "white"}
-              bd={account ? "" : "4px solid white"}
-              hov={account ? " #4c2be2" : ""}
-            />
-          </div>
         </Bars>
+
         <div
           onClick={() => {
             setHome(true);
             setTrans(true);
             setWallet(true);
             setNotify(true);
-            setSupport(true);
-            setAccount(true);
+
             setLogout(false);
           }}>
           <NavBars
@@ -170,15 +130,15 @@ const SideNav = () => {
 
 export default SideNav;
 
-const Container = styled.div`
+const Container = styled.div<{ dsp: string }>`
   width: 100%;
   height: 100vh;
   background-color: blueviolet;
   padding-top: 10px;
+  display: ${(props) => props.dsp};
   display: flex;
   flex-direction: column;
-  /* position: relative; */
-
+  position: relative;
   /* transition: all 350ms; */
 `;
 const Logo = styled.div`
@@ -190,7 +150,7 @@ const Logo = styled.div`
 `;
 const Bars = styled.div`
   width: 100%;
-  height: 440px;
+  height: 70%;
   display: flex;
   flex-direction: column;
   gap: 15px;
@@ -199,4 +159,86 @@ const Bars = styled.div`
   }
   margin: 0;
   padding: 0;
+`;
+const Image = styled.div`
+  margin-left: 5px;
+  margin-right: 5px;
+  margin: 5px;
+  width: calc(100% - 10px);
+  padding-top: 20px;
+  padding-bottom: 20px;
+  border-radius: 20px;
+  background-color: #372be2;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  img {
+    width: 160px;
+    height: 120px;
+    object-fit: cover;
+    object-position: center;
+  }
+  @media screen and (min-width: 801px) and (max-width: 1051px) {
+    display: none;
+  }
+`;
+const ImageWrapper = styled.div`
+  width: 90%;
+  height: 90%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  h5 {
+    font-weight: 400;
+  }
+`;
+const Small = styled.div`
+  font-size: 11px;
+  margin-bottom: 20px;
+`;
+const Big = styled.div`
+  font-weight: bold;
+  margin-top: 20px;
+  margin-bottom: 5px;
+`;
+const Button = styled.button`
+  border-radius: 10px;
+  color: white;
+  background-color: #a002a0f2;
+  width: 60px;
+  height: 30px;
+  /* font-size: 12px; */
+  border: none;
+  outline: none;
+  font-weight: bold;
+  font-size: 11px;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  transition: all 350ms;
+  :hover {
+    background-color: #940294;
+  }
+`;
+const Shower = styled.div`
+  position: absolute;
+  right: -15px;
+  top: 2px;
+  padding: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 8px;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+  font-weight: 200;
+  color: purple;
+  background-color: white;
+  @media screen and (min-width: 800px) {
+    display: none;
+  }
+`;
+const Stars = styled.div`
+  @media screen and (min-width: 801px) and (max-width: 1051px) {
+    display: none;
+  }
 `;

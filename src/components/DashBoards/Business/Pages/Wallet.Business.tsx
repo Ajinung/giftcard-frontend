@@ -7,11 +7,9 @@ import { MdOutlineCancel } from "react-icons/md";
 const BusinessWallet = () => {
   const [show, setShow] = useState(false);
   const [popup, setPopup] = useState(false);
-
   const Toggle = () => {
     setShow(!show);
   };
-
   const ShowPop = () => {
     setPopup(true);
   };
@@ -267,6 +265,7 @@ const HistoryHold = styled.div`
 `;
 
 const Container = styled.div`
+  width: 100%;
   ::-webkit-scrollbar {
     width: 6px;
     background-color: #f5f5f5;

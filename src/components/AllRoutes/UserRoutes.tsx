@@ -3,43 +3,37 @@ import { useNavigate, useRoutes } from "react-router-dom";
 import styled from "styled-components";
 
 import { TbArrowsLeftRight } from "react-icons/tb";
-import SideNav from "../DashBoards/Business/SideNav/Nav.Business";
-import BusinessHome from "../DashBoards/Business/Pages/Home.Business";
-import BusinessCard from "../DashBoards/Business/Pages/GiftCards";
-import BusinessWallet from "../DashBoards/Business/Pages/Wallet.Business";
-import BusinessNotify from "../DashBoards/Business/Pages/Notify.Business";
-import BusinessSupport from "../DashBoards/Business/Pages/Support.Business";
-import BusinessAccount from "../DashBoards/Business/Pages/Account.Business";
-import MobileNavs from "../DashBoards/Business/SideNav/Mobile.Nav";
-import BusinessMobileNavs from "../DashBoards/Business/SideNav/Mobile.Nav";
+import UserHome from "../DashBoards/User/Pages/Home.User";
+import UserProfile from "../DashBoards/User/Pages/Profile.User";
+import UserCards from "../DashBoards/User/Pages/MyCards.User";
+import UserNotify from "../DashBoards/User/Pages/Notify.User";
+import SideNav from "../DashBoards/User/SideNavs/Nav.User";
+import MobileNavs from "../DashBoards/User/SideNavs/Mobile.Nav";
+import DetailCard from "../DashBoards/User/Pages/DetailCard";
 
-const BusinessRoutes = () => {
+const UserRoutes = () => {
   const [showing, setShowing] = React.useState(false);
 
   let element = useRoutes([
     {
-      path: "/dashboard",
-      element: <BusinessHome />,
+      path: "/user-dashboard",
+      element: <UserHome />,
     },
     {
-      path: "/dashboard/giftcard",
-      element: <BusinessCard />,
+      path: "/user-dashboard/profile",
+      element: <UserProfile />,
     },
     {
-      path: "/dashboard/wallet",
-      element: <BusinessWallet />,
+      path: "/user-dashboard/mycards",
+      element: <UserCards />,
     },
     {
-      path: "/dashboard/notify",
-      element: <BusinessNotify />,
+      path: "/user-dashboard/notify",
+      element: <UserNotify />,
     },
     {
-      path: "/dashboard/support",
-      element: <BusinessSupport />,
-    },
-    {
-      path: "/dashboard/account",
-      element: <BusinessAccount />,
+      path: "/user-dashboard/card/id",
+      element: <DetailCard />,
     },
   ]);
   return (
@@ -54,12 +48,12 @@ const BusinessRoutes = () => {
         }}>
         <TbArrowsLeftRight />
       </Shower>
-      {showing ? <BusinessMobileNavs /> : null}
+      {showing ? <MobileNavs /> : null}
     </div>
   );
 };
 
-export default BusinessRoutes;
+export default UserRoutes;
 const WrapHead = styled.div`
   width: 250px;
   height: 100vh;

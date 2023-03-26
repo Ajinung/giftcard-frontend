@@ -1,18 +1,17 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 import styled from "styled-components";
-import NavBars from "../Props/Navbars";
+import MobileBars from "../Props/Mobile.Bars";
 import { HiHome, HiBell } from "react-icons/hi";
 import { MdInsertChart } from "react-icons/md";
 import { FaWallet } from "react-icons/fa";
 import { AiFillMessage } from "react-icons/ai";
 import { CiLogout } from "react-icons/ci";
 import { BsPersonFill } from "react-icons/bs";
-import pic from "../../../Images/dashpng.png";
 import { TbArrowsLeftRight } from "react-icons/tb";
 import { TiStarFullOutline } from "react-icons/ti";
-import { useNavigate } from "react-router-dom";
 
-const SideNav = () => {
+const BusinessMobileNavs = () => {
   const [home, setHome] = React.useState(true);
   const [trans, setTrans] = React.useState(true);
   const [wallet, setWallet] = React.useState(true);
@@ -20,17 +19,13 @@ const SideNav = () => {
   const [support, setSupport] = React.useState(true);
   const [account, setAccount] = React.useState(true);
   const [logout, setLogout] = React.useState(true);
+  const [show, setShow] = React.useState(true);
   const navigate = useNavigate();
-
   return (
     <div>
       <Container>
-        <Logo>GIFTHAVEN</Logo>
-        <br />
-        <br />
-        <br />
-        <Bars>
-          <div
+        <Wrapper>
+          <Nav
             onClick={() => {
               setHome(false);
               setTrans(true);
@@ -41,15 +36,15 @@ const SideNav = () => {
               setLogout(true);
               navigate("/dashboard");
             }}>
-            <NavBars
+            <MobileBars
               pic={<HiHome />}
               routeName="Home"
               cl={home ? "#d1abf5" : "white"}
-              bd={home ? "" : "4px solid white"}
+              bd={home ? "" : "#6c25bd"}
               hov={home ? " #4c2be2" : ""}
             />
-          </div>
-          <div
+          </Nav>
+          <Nav
             onClick={() => {
               setHome(true);
               setTrans(false);
@@ -60,15 +55,15 @@ const SideNav = () => {
               setLogout(true);
               navigate("/dashboard/giftcard");
             }}>
-            <NavBars
+            <MobileBars
               pic={<MdInsertChart />}
               routeName="Gift Cards"
               cl={trans ? "#d1abf5" : "white"}
-              bd={trans ? "" : "4px solid white"}
+              bd={trans ? "" : "#6c25bd"}
               hov={trans ? " #4c2be2" : ""}
             />
-          </div>
-          <div
+          </Nav>
+          <Nav
             onClick={() => {
               setHome(true);
               setTrans(true);
@@ -79,15 +74,15 @@ const SideNav = () => {
               setLogout(true);
               navigate("/dashboard/wallet");
             }}>
-            <NavBars
+            <MobileBars
               pic={<FaWallet />}
               routeName="Wallet"
               cl={wallet ? "#d1abf5" : "white"}
-              bd={wallet ? "" : "4px solid white"}
+              bd={wallet ? "" : "#6c25bd"}
               hov={wallet ? " #4c2be2" : ""}
             />
-          </div>
-          <div
+          </Nav>
+          <Nav
             onClick={() => {
               setHome(true);
               setTrans(true);
@@ -98,15 +93,15 @@ const SideNav = () => {
               setLogout(true);
               navigate("/dashboard/notify");
             }}>
-            <NavBars
+            <MobileBars
               pic={<HiBell />}
               routeName="Notification"
               cl={notify ? "#d1abf5" : "white"}
-              bd={notify ? "" : "4px solid white"}
+              bd={notify ? "" : "#6c25bd"}
               hov={notify ? " #4c2be2" : ""}
             />
-          </div>
-          <div
+          </Nav>
+          <Nav
             onClick={() => {
               setHome(true);
               setTrans(true);
@@ -117,15 +112,15 @@ const SideNav = () => {
               setLogout(true);
               navigate("/dashboard/support");
             }}>
-            <NavBars
+            <MobileBars
               pic={<AiFillMessage />}
               routeName="Support"
               cl={support ? "#d1abf5" : "white"}
-              bd={support ? "" : "4px solid white"}
+              bd={support ? "" : "#6c25bd"}
               hov={support ? " #4c2be2" : ""}
             />
-          </div>
-          <div
+          </Nav>
+          <Nav
             onClick={() => {
               setHome(true);
               setTrans(true);
@@ -136,67 +131,63 @@ const SideNav = () => {
               setLogout(true);
               navigate("/dashboard/account");
             }}>
-            <NavBars
+            <MobileBars
               pic={<BsPersonFill />}
               routeName="Account"
               cl={account ? "#d1abf5" : "white"}
-              bd={account ? "" : "4px solid white"}
+              bd={account ? "" : "#6c25bd"}
               hov={account ? " #4c2be2" : ""}
             />
-          </div>
-        </Bars>
-        <div
-          onClick={() => {
-            setHome(true);
-            setTrans(true);
-            setWallet(true);
-            setNotify(true);
-            setSupport(true);
-            setAccount(true);
-            setLogout(false);
-          }}>
-          <NavBars
-            pic={<CiLogout />}
-            routeName="Log Out"
-            cl={logout ? "#d1abf5" : "white"}
-            bd={logout ? "" : "4px solid white"}
-            hov={logout ? " #4c2be2" : ""}
-          />
-        </div>
+          </Nav>
+          <Nav
+            onClick={() => {
+              setHome(true);
+              setTrans(true);
+              setWallet(true);
+              setNotify(true);
+              setSupport(true);
+              setAccount(true);
+              setLogout(false);
+            }}>
+            <MobileBars
+              pic={<CiLogout />}
+              routeName="Log Out"
+              cl={logout ? "#d1abf5" : "white"}
+              bd={logout ? "" : "#6c25bd"}
+              hov={logout ? " #4c2be2" : ""}
+            />
+          </Nav>
+        </Wrapper>
       </Container>
     </div>
   );
 };
 
-export default SideNav;
+export default BusinessMobileNavs;
 
 const Container = styled.div`
-  width: 100%;
-  height: 100vh;
+  height: 400px;
+  width: 250px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  position: absolute;
+  z-index: 10;
+  right: 40px;
+  top: 60px;
   background-color: blueviolet;
-  padding-top: 10px;
-  display: flex;
-  flex-direction: column;
-  /* position: relative; */
-
-  /* transition: all 350ms; */
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 15px -3px,
+    rgba(0, 0, 0, 0.05) 0px 4px 6px -2px;
 `;
-const Logo = styled.div`
-  color: white;
-  padding-left: 30px;
-  @media screen and (min-width: 801px) and (max-width: 1051px) {
-    display: none;
-  }
-`;
-const Bars = styled.div`
+const Wrapper = styled.div`
   width: 100%;
-  height: 440px;
+  height: 90%;
   display: flex;
   flex-direction: column;
-  gap: 15px;
-  @media screen and (min-width: 801px) and (max-width: 1051px) {
-    gap: 25px;
-  }
-  margin: 0;
-  padding: 0;
+  /* justify-content: center; */
+  align-items: center;
+  gap: 10px;
+`;
+const Nav = styled.div`
+  width: 100%;
 `;

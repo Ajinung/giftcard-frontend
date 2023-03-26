@@ -66,6 +66,11 @@ const HoldToggle = styled.div`
   justify-content: space-between;
   h2 {
     font-size: 17px;
+    color: #383838;
+    font-weight: 600;
+    @media screen and (min-width: 800px) {
+      font-size: 35px;
+    }
   }
 `;
 const ToggleHold = styled.div`

@@ -88,20 +88,27 @@ const BusinessHome = () => {
               </Sec>
             </Card>
             <Held>
-              <Box bg="#FDF3E7" cl="#EF9837" bc="#EF9837">
-                <img src={spiral} alt="" style={{ height: "40px" }} />
-                <h2>Top Gift Cards</h2>
-                <p>Know your gift card’s value at a glance.</p>
-                <button>See top Gift cards</button>
-              </Box>
-              <Box bg="#f9f4ff" cl="blue" bc="#8246f3">
-                <Circle>
-                  <img src={two} alt="" style={{ height: "40px" }} />
-                </Circle>
-                <h2>Check Rates</h2>
-                <p>Know your gift card’s value at a glance.</p>
-                <button>Check rates</button>
-              </Box>
+              <div
+                style={{
+                  width: "90%",
+                  display: "flex",
+                  gap: "20px",
+                }}>
+                <Box bg="#FDF3E7" cl="#EF9837" bc="#EF9837">
+                  <img src={spiral} alt="" style={{ height: "40px" }} />
+                  <h2>Top Gift Cards</h2>
+                  <p>Know your gift card’s value at a glance.</p>
+                  <button>See top Gift cards</button>
+                </Box>
+                <Box bg="#f9f4ff" cl="blue" bc="#8246f3">
+                  <Circle>
+                    <img src={two} alt="" style={{ height: "40px" }} />
+                  </Circle>
+                  <h2>Check Rates</h2>
+                  <p>Know your gift card’s value at a glance.</p>
+                  <button>Check rates</button>
+                </Box>
+              </div>
             </Held>
           </div>
           <P>Notifications</P>
@@ -120,7 +127,7 @@ export default BusinessHome;
 
 const P = styled.div`
   margin-top: 40px;
-  margin-left: 300px;
+  margin-left: 40px;
   font-size: 19px;
   font-weight: bold;
 
@@ -148,19 +155,17 @@ const Up = styled.div`
 `;
 
 const Lists = styled.div`
-  width: 75%;
+  width: 50%;
   height: 50px;
   background-color: #f5f5f5;
   border-radius: 10px;
   display: flex;
   align-items: center;
-  margin-left: 265px;
 
   p {
     margin: 0;
     margin-left: 20px;
     font-weight: 600;
-
     @media screen and (max-width: 960px) {
       margin: 0;
       font-size: 14px;
@@ -242,7 +247,7 @@ const Sec = styled.div`
 `;
 
 const Box = styled.div<{ bg: string; cl: string; bc: string }>`
-  width: 48%;
+  width: 40%;
   height: 250px;
   background: ${({ bg }) => bg};
   border-radius: 10px;
@@ -250,7 +255,6 @@ const Box = styled.div<{ bg: string; cl: string; bc: string }>`
   /* align-items: center; */
   justify-content: center;
   flex-direction: column;
-
   @media screen and (max-width: 960px) {
     width: 100%;
     margin-bottom: 15px;
@@ -289,13 +293,18 @@ const Box = styled.div<{ bg: string; cl: string; bc: string }>`
 `;
 
 const Held = styled.div`
-  width: 75%;
+  width: 100%;
   display: flex;
+  justify-content: center;
   margin-top: 25px;
-  align-items: center;
-  justify-content: space-between;
+
+  /* align-items: center;
+  /* justify-content: center; */
+  /* flex-direction: row;  */
+  /* justify-content: space-between; */
+  gap: 20px;
   margin-bottom: 10px;
-  margin-left: 265px;
+  /* margin-left: 265px; */
 
   @media screen and (max-width: 960px) {
     margin: 0;
@@ -306,11 +315,12 @@ const Held = styled.div`
 `;
 
 const Card = styled.div`
-  width: 75%;
+  width: 70%;
   height: 280px;
   background-color: #8246f3;
   border-radius: 10px;
   margin-top: 30px;
+  margin-right: 200px;
   display: flex;
   align-items: center;
   position: relative;
@@ -340,7 +350,6 @@ const Hold = styled.div`
   color: blue;
   align-items: center;
   margin-top: 25px;
-
   h5 {
     font-size: 23px;
     font-weight: lighter;
@@ -353,9 +362,9 @@ const Prof = styled.div`
   width: 80%;
   height: 180px;
   padding-top: 30px;
-  padding-left: 30px;
+  padding-left: 10px;
+  padding-right: 10px;
   /* margin-left: 250px; */
-
   z-index: 3;
   position: sticky;
   top: 0.2px;
@@ -392,7 +401,10 @@ const Prof = styled.div`
 
 const Container = styled.div`
   display: flex;
-  width: 100%;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
   /* background-color: red; */
   overflow: hidden;
 `;
@@ -417,6 +429,7 @@ const Mid = styled.div`
   h4 {
     margin: 0;
     margin-top: 40px;
+    margin-left: 40px;
     /* margin-left: 300px; */
     font-size: 19px;
 
