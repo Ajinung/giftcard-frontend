@@ -57,6 +57,8 @@ const PersonalAccount = () => {
     }
   };
 
+  console.log(business?._id);
+
   return (
     <Container>
       <NameCard>

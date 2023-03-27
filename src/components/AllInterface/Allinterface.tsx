@@ -2,11 +2,14 @@ export interface BusinessData {
   _id: string;
   name: string;
   email: string;
-  phoneNumber: string;
+  logo: string;
+  Balance: string;
+  phoneNumber: number;
   password: string;
   confirmPassword: string;
+  BusinessCode: string;
   status: string;
-  logo: string;
+  TransactionHistory: {}[];
   giftCard: {}[];
 }
 export interface UserData {

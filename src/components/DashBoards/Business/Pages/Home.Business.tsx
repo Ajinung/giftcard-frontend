@@ -4,9 +4,12 @@ import { AiFillEye, AiFillEyeInvisible } from "react-icons/ai";
 import card from "../../../Assets1/card.svg";
 import spiral from "../../../Assets1/robo.svg";
 import two from "../../../../Assets/two.svg";
+import { useAppSelector } from "../../../Global/Store";
+import { NavLink } from "react-router-dom";
 
 const BusinessHome = () => {
   const [show, setShow] = useState(false);
+  const user = useAppSelector((state) => state.bizClient);
 
   return (
     <Container>
@@ -14,7 +17,7 @@ const BusinessHome = () => {
         <InHead>
           <Message>
             Welcome,
-            <span> iceprince</span>
+            <span> {user?.name}</span>
           </Message>
           <SeeBalance>
             <BalanceDetails>
@@ -34,7 +37,7 @@ const BusinessHome = () => {
                   )}
                 </div>
               </Viewer>
-              {show ? <Info>$10000</Info> : <Info>*******</Info>}
+              {show ? <Info> ₦{user?.Balance}.00</Info> : <Info>*******</Info>}
             </BalanceDetails>
             <WithdrawButton>Withdraw</WithdrawButton>
           </SeeBalance>
@@ -52,11 +55,16 @@ const BusinessHome = () => {
                 <QuickComponent>
                   <div>
                     <HText>Sell Gift Cards</HText>
-                    <LText style={{ fontSize: "12px" }}>
-                      Trade gift cards for Fast Cash
+                    <LText style={{ fontSize: "20px" }}>
+                      Create and sell Gift Cards for your business
                     </LText>
                   </div>
-                  <Button>Sell Gift Card</Button>
+                  <NavLink
+                    to="/dashboard/giftcard"
+                    style={{ textDecoration: "none" }}
+                  >
+                    <Button>Sell Gift Card</Button>
+                  </NavLink>
                 </QuickComponent>
               </QuickWrap>
             </QuickContain>
@@ -274,7 +282,8 @@ const Button = styled.button`
 const HText = styled.div`
   font-size: 19px;
   @media screen and (min-width: 800px) {
-    font-size: 29px;
+    font-size: 3rem;
+    font-weight: 700;
   }
 
   @media screen and (max-width: 799px) {
