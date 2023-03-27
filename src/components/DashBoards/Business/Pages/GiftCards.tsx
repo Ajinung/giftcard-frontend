@@ -41,8 +41,16 @@ const BusinessCard = () => {
 export default BusinessCard;
 
 const Container = styled.div`
-  width: 100vw;
-  overflow: hidden;
+  width: 100%;
+  overflow-y: scroll;
+  ::-webkit-scrollbar {
+    width: 6px;
+    background-color: #f5f5f5;
+  }
+  ::-webkit-scrollbar-thumb {
+    background-color: silver;
+    border-radius: 10px;
+  }
 `;
 const Head = styled.div`
   width: calc(100% - 47px);
