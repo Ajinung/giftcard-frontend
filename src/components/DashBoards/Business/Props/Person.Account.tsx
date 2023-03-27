@@ -87,30 +87,12 @@ const PersonalAccount = () => {
           gap: "30px",
         }}
       >
-        <Inputs
+        <Inputs>{business?.name}</Inputs>
+        <Inputs>{business?.email}</Inputs>
+        <Inputs>+{business?.phoneNumber}</Inputs>
+        <Inputs>{business?.giftCard.length} Giftcards Created</Inputs>
 
-        // value=
-        >
-          iSAAC
-          {/* {business?.name} */}
-        </Inputs>
-        <Inputs
-
-        // value=
-        >
-          email
-          {/* {business?.email} */}
-        </Inputs>
-        <Inputs
-
-        // value=
-        >
-          phone
-          {/* {business?.email} */}
-        </Inputs>
-        {/* <Inputs2 value="iceprince" /> */}
-
-        <Inputs placeholder="NG +234 | 09167169741" />
+        {/* <Inputs placeholder="NG +234 | 09167169741" /> */}
         {/* <Button>Update Profile</Button> */}
       </div>
       {/* <Button2>Update Profile</Button2> */}
