@@ -383,6 +383,7 @@ const Card = styled.div`
   background-color: white;
   position: relative;
   border-radius: 15px;
+  z-index: 3;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -434,6 +435,7 @@ const Popup = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
+  z-index: 2;
 `;
 
 const AddBox = styled.div`

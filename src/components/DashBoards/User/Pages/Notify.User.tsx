@@ -2,8 +2,10 @@ import React from "react";
 import styled from "styled-components";
 import { AiFillMessage } from "react-icons/ai";
 import pic from "../../../Images/noti.svg";
+import NotifyContent from "../Props/Notify.Content";
 
 const UserNotify = () => {
+  const dummy_notify: any = [{ item: "welcome" }];
   return (
     <Container>
       <Head>
@@ -11,15 +13,21 @@ const UserNotify = () => {
           <h2>Notifications</h2>
         </Hold>
       </Head>
-      <Nothing>
-        <CenterHold>
-          <Pic>
-            <img src={pic} />
-          </Pic>
-          <Txt>Whoops! No Activity</Txt>
-          <Sxt>You’ll get new notifications soon.</Sxt>
-        </CenterHold>
-      </Nothing>
+      <Body>
+        {dummy_notify.length > 0 ? (
+          <NotifyContent />
+        ) : (
+          <Nothing>
+            <CenterHold>
+              <Pic>
+                <img src={pic} />
+              </Pic>
+              <Txt>Whoops! No Activity</Txt>
+              <Sxt>You’ll get new notifications soon.</Sxt>
+            </CenterHold>
+          </Nothing>
+        )}
+      </Body>
     </Container>
   );
 };
@@ -44,6 +52,11 @@ const Head = styled.div`
   height: 150px;
   background-color: #f1f1f1;
   color: #5a5a5a;
+`;
+const Body = styled.div`
+  width: calc(100% - 47px);
+  padding-left: 23px;
+  padding-right: 23px;
 `;
 const Hold = styled.div`
   height: 100%;

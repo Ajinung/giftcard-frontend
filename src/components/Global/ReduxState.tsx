@@ -21,7 +21,7 @@ const ReduxState = createSlice({
   },
 });
 
-export const dummy_user: any = { name: "Andrea", role: "user" };
+export const dummy_user: any = { name: "Andrea", role: "admin" };
 
 export const { login, logout } = ReduxState.actions;
 
