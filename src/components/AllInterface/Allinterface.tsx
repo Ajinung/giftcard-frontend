@@ -26,6 +26,7 @@ export interface cardData {
   colour: string;
   moneyWorth: number;
   uniqueID: string;
+  name: string;
 }
 
 export interface UserDetails {
@@ -37,4 +38,7 @@ export interface UserDetails {
   password: string;
   confirmPassword: string;
   status: string;
+  TransactionHistory: {}[];
+  // companyGiftCards: {}[];
+  PurchasedGiftCards: {}[];
 }

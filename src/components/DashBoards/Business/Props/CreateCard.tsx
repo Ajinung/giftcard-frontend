@@ -8,6 +8,7 @@ import { UseAppDispatch, useAppSelector } from "../../../Global/Store";
 
 const CreateCard = () => {
   const business = useAppSelector((state) => state.bizClient);
+  const card = useAppSelector((state) => state.DataCard);
   const dispatch = UseAppDispatch();
   const URl = "https://giftcard-api.onrender.com";
 
@@ -41,7 +42,7 @@ const CreateCard = () => {
       <Wrapper>
         <Update>
           <Circle>
-            <Img src={business?.logo === "" ? pic : business?.logo} />
+            <Img src={card?.BrandLogo === "" ? pic : card?.BrandLogo} />
           </Circle>
         </Update>
         <Form>
@@ -115,7 +116,7 @@ const Form = styled.form`
 const Img = styled.img`
   height: 100%;
   width: 100%;
-  object-fit: contain;
+  object-fit: cover;
   object-position: center;
   border-radius: 50%;
 `;

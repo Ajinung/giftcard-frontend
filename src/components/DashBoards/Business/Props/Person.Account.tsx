@@ -11,6 +11,7 @@ const PersonalAccount = () => {
   const [previewImage, setPreviewImage] = React.useState("");
   const [image, setImage] = React.useState("");
   const business = useAppSelector((state) => state.bizClient);
+  const card = useAppSelector((state) => state.DataCard);
   const dispatch = UseAppDispatch();
   const URl = "https://giftcard-api.onrender.com";
 
@@ -66,7 +67,7 @@ const PersonalAccount = () => {
           <Update>
             <CircleText>
               <Circle>
-                <Img src={previewImage ? previewImage : pic} />
+                <Img src={card?.BrandLogo === "" ? pic : card?.BrandLogo} />
               </Circle>
               <label htmlFor="pix">upload Logo</label>
             </CircleText>

@@ -46,7 +46,7 @@ const BusinessHome = () => {
       <Body>
         <InBody>
           <QuickActions>
-            <div>Quick Actions</div>
+            <h1>Quick Actions</h1>
             <QuickContain>
               <QuickWrap>
                 <QuickImage>
@@ -219,6 +219,12 @@ const QuickActions = styled.div`
   display: flex;
   flex-direction: column;
   gap: 20px;
+
+  h1 {
+    margin: 0;
+    font-weight: 600;
+    font-size: 1.5rem;
+  }
 `;
 const QuickContain = styled.div`
   width: calc(100% - 15px);
@@ -282,7 +288,7 @@ const Button = styled.button`
 const HText = styled.div`
   font-size: 19px;
   @media screen and (min-width: 800px) {
-    font-size: 3rem;
+    font-size: 3.5rem;
     font-weight: 700;
   }
 
