@@ -7,9 +7,6 @@ import { MdOutlineCancel } from "react-icons/md";
 const BusinessWallet = () => {
   const [show, setShow] = useState(false);
   const [popup, setPopup] = useState(false);
-  const Toggle = () => {
-    setShow(!show);
-  };
   const ShowPop = () => {
     setPopup(true);
   };
@@ -18,163 +15,153 @@ const BusinessWallet = () => {
   };
 
   return (
-    <Container style={{ overflowX: "hidden", width: "100%", height: "100vh" }}>
-      {popup ? (
-        <Popup>
-          <MdOutlineCancel
-            onClick={HidePop}
-            style={{
-              color: "white",
-              fontSize: "40px",
-              position: "absolute",
-              right: "32%",
-              top: "16%",
-              cursor: "pointer",
-            }}
-          />
-          <Card>
-            <h2>Process Withdrawal</h2>
-            <p>Withdraw funds from wallet</p>
+    <>
+      <div>
+        {popup ? (
+          <Popup>
+            <Card>
+              <MdOutlineCancel
+                onClick={HidePop}
+                style={{
+                  color: "silver",
+                  fontSize: "40px",
+                  position: "absolute",
+                  right: "-29px",
+                  top: "-29px",
+                  cursor: "pointer",
+                  zIndex: "2",
+                }}
+              />
+              <h2>Process Withdrawal</h2>
+              <p>Withdraw funds from wallet</p>
 
-            <AmountHold>$3000.00</AmountHold>
-            <input type="text" placeholder="Enter amount to withdraw" />
-            <button>Process Payment</button>
-          </Card>
-        </Popup>
-      ) : null}
-      <Prof>
-        <p>Wallet</p>
-        <Hold>
-          <h5>Available balance</h5>
+              <AmountHold>$3000.00</AmountHold>
+              <input type="text" placeholder="Enter amount to withdraw" />
+              <button>Process Payment</button>
+            </Card>
+          </Popup>
+        ) : null}
+      </div>
+      <Container>
+        <Head>
+          <InHead>
+            <Message>Wallet</Message>
+            <SeeBalance>
+              <BalanceDetails>
+                <Viewer>
+                  <div style={{ marginBottom: "5px" }}>Available balance</div>
+                  <div
+                    onClick={() => {
+                      setShow(!show);
+                    }}>
+                    {show ? (
+                      <AiFillEye
+                        style={{ marginTop: "5px", fontSize: "30px" }}
+                      />
+                    ) : (
+                      <AiFillEyeInvisible
+                        style={{ marginTop: "5px", fontSize: "30px" }}
+                      />
+                    )}
+                  </div>
+                </Viewer>
+                {show ? <Info>$10000</Info> : <Info>*******</Info>}
+              </BalanceDetails>
+              <WithdrawButton>Set PIN</WithdrawButton>
+            </SeeBalance>
+          </InHead>
+        </Head>
 
-          {show ? (
-            <AiFillEyeInvisible
-              onClick={Toggle}
-              style={{
-                fontSize: "26px",
-                marginTop: "2px",
-                marginLeft: "30px",
-                cursor: "pointer",
-              }}
-            />
-          ) : (
-            <AiFillEye
-              onClick={Toggle}
-              style={{
-                fontSize: "26px",
-                marginTop: "2px",
-                marginLeft: "30px",
-                cursor: "pointer",
-              }}
-            />
-          )}
-        </Hold>
-        {show ? (
-          <div
-            style={{
-              fontSize: "30px",
-              color: "blue",
-              fontWeight: "bolder",
-            }}>
-            NGN 0
-          </div>
-        ) : (
-          <div
-            style={{
-              fontSize: "30px",
-              color: "blue",
-              fontWeight: "bolder",
-            }}>
-            ******
-          </div>
-        )}
-      </Prof>
-      <p
-        style={{
-          marginLeft: "270px",
-          fontSize: "23px",
-          fontWeight: "600",
-          marginTop: "40px",
-        }}>
-        Withdrawal
-      </p>
-      <AddBox onClick={ShowPop}>
-        <AiOutlinePlus
-          style={{ fontSize: "30px", color: "blue", marginBottom: "6px" }}
-        />
-        <p>Request Withdrawal</p>
-      </AddBox>
-      <History>
-        <p>Withdrawal History</p>
-        <HistoryHold>
-          <Up>
-            <Inn>
-              <p>S/N</p>
-              <p>Logo</p>
-              <p>Company Name</p>
-              <p>Date and Time</p>
-              <p>Amount</p>
-            </Inn>
-          </Up>
-          <All>
-            <Two>
-              <p>1</p>
-              <Circle bc={`#${Math.floor(Math.random() * 1000 + 2345)}`}>
-                <p style={{ color: "white", fontSize: "18px" }}>I</p>
-              </Circle>
-              <p>Issac Enterprises</p>
-              <p>13-03-23/10:00am</p>
-              <p>{(3000.0).toLocaleString()}</p>
-            </Two>
-            <Two>
-              <p>1</p>
-              <Circle bc={`#${Math.floor(Math.random() * 1000 + 2345)}`}>
-                <p style={{ color: "white", fontSize: "18px" }}>I</p>
-              </Circle>
-              <p>Issac Enterprises</p>
-              <p>13-03-23/10:00am</p>
-              <p>{(3000.0).toLocaleString()}</p>
-            </Two>
-            <Two>
-              <p>1</p>
-              <Circle bc={`#${Math.floor(Math.random() * 1000 + 2345)}`}>
-                <p style={{ color: "white", fontSize: "18px" }}>I</p>
-              </Circle>
-              <p>Issac Enterprises</p>
-              <p>13-03-23/10:00am</p>
-              <p>{(3000.0).toLocaleString()}</p>
-            </Two>
-            <Two>
-              <p>1</p>
-              <Circle bc={`#${Math.floor(Math.random() * 1000 + 2345)}`}>
-                <p style={{ color: "white", fontSize: "18px" }}>I</p>
-              </Circle>
-              <p>Issac Enterprises</p>
-              <p>13-03-23/10:00am</p>
-              <p>{(3000.0).toLocaleString()}</p>
-            </Two>
-            <Two>
-              <p>1</p>
-              <Circle bc={`#${Math.floor(Math.random() * 1000 + 2345)}`}>
-                <p style={{ color: "white", fontSize: "18px" }}>I</p>
-              </Circle>
-              <p>Issac Enterprises</p>
-              <p>13-03-23/10:00am</p>
-              <p>{(3000.0).toLocaleString()}</p>
-            </Two>
-            <Two>
-              <p>1</p>
-              <Circle bc={`#${Math.floor(Math.random() * 1000 + 1543)}`}>
-                <p style={{ color: "white", fontSize: "18px" }}>I</p>
-              </Circle>
-              <p>Issac Enterprises</p>
-              <p>13-03-23/10:00am</p>
-              <p>{(3000.0).toLocaleString()}</p>
-            </Two>
-          </All>
-        </HistoryHold>
-      </History>
-    </Container>
+        <Body>
+          <InBody>
+            <Defaults>
+              <div style={{ fontSize: "25px", fontWeight: "500" }}>
+                Default Bank Account
+              </div>
+              <OtherDefault>
+                <div style={{ fontSize: "25px", fontWeight: "500" }}>
+                  Other Bank Accounts
+                </div>
+                <AddNew onClick={ShowPop}>
+                  <div style={{ fontSize: "40px" }}>+</div>
+                  <div>Add New bank account</div>
+                </AddNew>
+              </OtherDefault>
+            </Defaults>
+            <History>
+              <p>Withdrawal History</p>
+              <HistoryHold>
+                <Up>
+                  <Inn>
+                    <p>S/N</p>
+                    <p>Logo</p>
+                    <p>Company Name</p>
+                    <p>Date and Time</p>
+                    <p>Amount</p>
+                  </Inn>
+                </Up>
+                <All>
+                  <Two>
+                    <p>1</p>
+                    <Circle bc={`#${Math.floor(Math.random() * 1000 + 2345)}`}>
+                      <p style={{ color: "white", fontSize: "18px" }}>I</p>
+                    </Circle>
+                    <p>Issac Enterprises</p>
+                    <p>13-03-23/10:00am</p>
+                    <p>{(3000.0).toLocaleString()}</p>
+                  </Two>
+                  <Two>
+                    <p>1</p>
+                    <Circle bc={`#${Math.floor(Math.random() * 1000 + 2345)}`}>
+                      <p style={{ color: "white", fontSize: "18px" }}>I</p>
+                    </Circle>
+                    <p>Issac Enterprises</p>
+                    <p>13-03-23/10:00am</p>
+                    <p>{(3000.0).toLocaleString()}</p>
+                  </Two>
+                  <Two>
+                    <p>1</p>
+                    <Circle bc={`#${Math.floor(Math.random() * 1000 + 2345)}`}>
+                      <p style={{ color: "white", fontSize: "18px" }}>I</p>
+                    </Circle>
+                    <p>Issac Enterprises</p>
+                    <p>13-03-23/10:00am</p>
+                    <p>{(3000.0).toLocaleString()}</p>
+                  </Two>
+                  <Two>
+                    <p>1</p>
+                    <Circle bc={`#${Math.floor(Math.random() * 1000 + 2345)}`}>
+                      <p style={{ color: "white", fontSize: "18px" }}>I</p>
+                    </Circle>
+                    <p>Issac Enterprises</p>
+                    <p>13-03-23/10:00am</p>
+                    <p>{(3000.0).toLocaleString()}</p>
+                  </Two>
+                  <Two>
+                    <p>1</p>
+                    <Circle bc={`#${Math.floor(Math.random() * 1000 + 2345)}`}>
+                      <p style={{ color: "white", fontSize: "18px" }}>I</p>
+                    </Circle>
+                    <p>Issac Enterprises</p>
+                    <p>13-03-23/10:00am</p>
+                    <p>{(3000.0).toLocaleString()}</p>
+                  </Two>
+                  <Two>
+                    <p>1</p>
+                    <Circle bc={`#${Math.floor(Math.random() * 1000 + 1543)}`}>
+                      <p style={{ color: "white", fontSize: "18px" }}>I</p>
+                    </Circle>
+                    <p>Issac Enterprises</p>
+                    <p>13-03-23/10:00am</p>
+                    <p>{(3000.0).toLocaleString()}</p>
+                  </Two>
+                </All>
+              </HistoryHold>
+            </History>
+          </InBody>
+        </Body>
+      </Container>
+    </>
   );
 };
 
@@ -197,6 +184,10 @@ const Two = styled.div`
 const Circle = styled.div<{ bc: string }>`
   width: 50px;
   height: 50px;
+  @media screen and (max-width: 800px) {
+    width: 33px;
+    height: 33px;
+  }
   border-radius: 50%;
   display: flex;
   align-items: center;
@@ -206,7 +197,7 @@ const Circle = styled.div<{ bc: string }>`
 
 const All = styled.div`
   width: 100%;
-  height: 263px;
+  height: 100%;
   display: flex;
   align-items: center;
   /* justify-content: center; */
@@ -229,18 +220,6 @@ const All = styled.div`
   }
 `;
 
-const Datas = styled.div`
-  display: flex;
-  width: 100%;
-  justify-content: space-between;
-  margin: 0;
-
-  p {
-    margin-left: 15px;
-    margin-right: 15px;
-  }
-`;
-
 const Up = styled.div`
   display: flex;
   width: 100%;
@@ -255,10 +234,8 @@ const Up = styled.div`
 `;
 
 const HistoryHold = styled.div`
-  width: 85%;
-  height: 330px;
+  width: 100%;
   background-color: white;
-  margin-left: 30px;
   /* padding: 25px; */
   box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 6px -1px,
     rgba(0, 0, 0, 0.06) 0px 2px 4px -1px;
@@ -266,6 +243,7 @@ const HistoryHold = styled.div`
 
 const Container = styled.div`
   width: 100%;
+  overflow-y: scroll;
   ::-webkit-scrollbar {
     width: 6px;
     background-color: #f5f5f5;
@@ -277,19 +255,111 @@ const Container = styled.div`
 `;
 
 const History = styled.div`
-  width: 76%;
-  height: 380px;
+  width: 100%;
   /* background-color: #f9f4ff; */
-  margin-left: 269px;
   border-radius: 10px;
-  margin-top: 50px;
-  padding-left: 23px;
+  margin-top: 15px;
   padding-top: 13px;
-  margin-bottom: 50px;
+  margin-bottom: 25px;
 
   p {
     font-size: 20px;
     font-weight: 600;
+    @media screen and (max-width: 800px) {
+      font-size: 13px;
+      font-weight: 600;
+    }
+  }
+`;
+
+const Head = styled.div`
+  width: 100%;
+  max-height: 240px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  background-color: #f1f1f1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+`;
+const InHead = styled.div`
+  width: 90%;
+  display: flex;
+  flex-direction: column;
+  gap: 35px;
+`;
+const Message = styled.div`
+  font-size: 25px;
+  span {
+    font-weight: 600;
+  }
+`;
+const SeeBalance = styled.div`
+  color: blue;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+`;
+const Viewer = styled.div`
+  display: flex;
+  gap: 30px;
+  align-items: center;
+  font-size: 17px;
+`;
+const Info = styled.div`
+  font-size: 20px;
+`;
+const BalanceDetails = styled.div``;
+const WithdrawButton = styled.button`
+  border-radius: 10px;
+  width: 250px;
+  color: white;
+  background-color: #a35ef7;
+  padding: 15px 60px;
+  border: none;
+  outline: none;
+  font-size: 17px;
+  margin-top: 30px;
+  transition: all 350ms;
+  :hover {
+    cursor: pointer;
+    background-color: #913cf9;
+  }
+`;
+const Body = styled.div`
+  width: 100%;
+  color: #3d3d3d;
+  margin-top: 30px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+`;
+const InBody = styled.div`
+  width: 90%;
+  display: flex;
+  flex-direction: column;
+  gap: 35px;
+`;
+const Defaults = styled.div``;
+const OtherDefault = styled.div`
+  margin-top: 60px;
+`;
+const AddNew = styled.div`
+  cursor: pointer;
+  padding: 40px;
+  color: blue;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border-radius: 10px;
+  border: 1px solid blue;
+  margin-top: 10px;
+  @media screen and (min-width: 800px) {
+    width: 400px;
   }
 `;
 
@@ -311,6 +381,7 @@ const Card = styled.div`
   padding: 30px;
   height: 350px;
   background-color: white;
+  position: relative;
   border-radius: 15px;
   display: flex;
   align-items: center;
@@ -356,10 +427,10 @@ const Card = styled.div`
 
 const Popup = styled.div`
   width: 100%;
-  height: 100vh;
+  height: 100%;
+  overflow: hidden;
   background: rgba(0, 0, 0, 0.6);
   position: absolute;
-  z-index: 9;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -381,61 +452,5 @@ const AddBox = styled.div`
     margin: 0;
     font-size: 17px;
     color: blue;
-  }
-`;
-
-const Prof = styled.div`
-  background-color: #f9f4ff;
-  width: 80%;
-  height: 180px;
-  padding-top: 23px;
-  padding-left: 30px;
-  margin-left: 250px;
-
-  z-index: 3;
-  position: sticky;
-  top: 0.2px;
-  overflow: hidden;
-
-  @media screen and (max-width: 960px) {
-    margin: 0;
-    width: 100%;
-    padding-bottom: 23px;
-  }
-
-  p {
-    margin: 0;
-    font-size: 25px;
-  }
-
-  button {
-    width: 120px;
-    height: 45px;
-    background-color: #8246f3;
-    border: 0;
-    color: white;
-    font-size: 15px;
-    border-radius: 10px;
-    margin-left: 85%;
-    margin-bottom: 20px;
-
-    @media screen and (max-width: 500px) {
-      margin: 0;
-      margin-top: 20px;
-      width: 80%;
-    }
-  }
-`;
-
-const Hold = styled.div`
-  display: flex;
-  color: blue;
-  align-items: center;
-  margin-top: 25px;
-
-  h5 {
-    font-size: 23px;
-    font-weight: lighter;
-    margin: 0;
   }
 `;

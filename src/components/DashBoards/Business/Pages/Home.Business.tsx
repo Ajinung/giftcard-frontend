@@ -4,419 +4,116 @@ import { AiFillEye, AiFillEyeInvisible } from "react-icons/ai";
 import card from "../../../Assets1/card.svg";
 import spiral from "../../../Assets1/robo.svg";
 import two from "../../../../Assets/two.svg";
-// import { Waypoint } from "react-waypoint";
 
 const BusinessHome = () => {
   const [show, setShow] = useState(false);
 
-  const Toggle = () => {
-    setShow(!show);
-  };
-
   return (
-    <div style={{ overflowX: "hidden" }}>
-      <Container>
-        <Mid>
-          <Prof>
-            <p>
-              Welcome,
-              <span style={{ fontWeight: "650", textTransform: "capitalize" }}>
-                Team Mauvericks
-              </span>
-            </p>
-            <Hold>
-              <h5>Available balance</h5>
-
-              {show ? (
-                <AiFillEyeInvisible
-                  onClick={Toggle}
-                  style={{
-                    fontSize: "26px",
-                    marginTop: "2px",
-                    marginLeft: "30px",
-                    cursor: "pointer",
-                  }}
-                />
-              ) : (
-                <AiFillEye
-                  onClick={Toggle}
-                  style={{
-                    fontSize: "26px",
-                    marginTop: "2px",
-                    marginLeft: "30px",
-                    cursor: "pointer",
-                  }}
-                />
-              )}
-            </Hold>
-            {show ? (
-              <div
-                style={{
-                  fontSize: "30px",
-                  color: "blue",
-                  fontWeight: "bolder",
-                }}>
-                NGN 0
+    <Container>
+      <Head>
+        <InHead>
+          <Message>
+            Welcome,
+            <span> iceprince</span>
+          </Message>
+          <SeeBalance>
+            <BalanceDetails>
+              <Viewer>
+                <div style={{ marginBottom: "5px" }}>Available balance</div>
+                <div
+                  onClick={() => {
+                    setShow(!show);
+                  }}>
+                  {show ? (
+                    <AiFillEye style={{ marginTop: "5px", fontSize: "30px" }} />
+                  ) : (
+                    <AiFillEyeInvisible
+                      style={{ marginTop: "5px", fontSize: "30px" }}
+                    />
+                  )}
+                </div>
+              </Viewer>
+              {show ? <Info>$10000</Info> : <Info>*******</Info>}
+            </BalanceDetails>
+            <WithdrawButton>Withdraw</WithdrawButton>
+          </SeeBalance>
+        </InHead>
+      </Head>
+      <Body>
+        <InBody>
+          <QuickActions>
+            <div>Quick Actions</div>
+            <QuickContain>
+              <QuickWrap>
+                <QuickImage>
+                  <img src={card} />
+                </QuickImage>
+                <QuickComponent>
+                  <div>
+                    <HText>Sell Gift Cards</HText>
+                    <LText style={{ fontSize: "12px" }}>
+                      Trade gift cards for Fast Cash
+                    </LText>
+                  </div>
+                  <Button>Sell Gift Card</Button>
+                </QuickComponent>
+              </QuickWrap>
+            </QuickContain>
+          </QuickActions>
+          <Cards>
+            <CardComponent>
+              <CardImage>
+                <img src={spiral} />
+              </CardImage>
+              <div>
+                <HText1>Top Gift Cards</HText1>
+                <LText1 style={{ fontSize: "12px" }}>
+                  Trade gift cards for Fast Cash
+                </LText1>
               </div>
-            ) : (
-              <div
-                style={{
-                  fontSize: "30px",
-                  color: "blue",
-                  fontWeight: "bolder",
-                }}>
-                ******
+              <CardButton>See Top Gift Cards</CardButton>
+            </CardComponent>
+            <CardComponent2>
+              <CardImage2>
+                <img src={two} />
+              </CardImage2>
+              <div>
+                <HText2>Top Gift Cards</HText2>
+                <LText2 style={{ fontSize: "12px" }}>
+                  Trade gift cards for Fast Cash
+                </LText2>
               </div>
-            )}
-            <button>Withdraw</button>
-          </Prof>
-          <h4>Quick Actions</h4>
-          <div
-            style={{
-              display: "flex",
-              alignItems: "center",
-              justifyContent: "center",
-              flexDirection: "column",
-              width: "100%",
-            }}>
-            <Card>
-              <img src={card} alt="" />
-              <Sec>
-                <h1>Create Gift Cards</h1>
-                <p>Create gift cards and sell</p>
-                <button>Generate Gift Card</button>
-              </Sec>
-            </Card>
-            <Held>
-              <div
-                style={{
-                  width: "90%",
-                  display: "flex",
-                  gap: "20px",
-                }}>
-                <Box bg="#FDF3E7" cl="#EF9837" bc="#EF9837">
-                  <img src={spiral} alt="" style={{ height: "40px" }} />
-                  <h2>Top Gift Cards</h2>
-                  <p>Know your gift card’s value at a glance.</p>
-                  <button>See top Gift cards</button>
-                </Box>
-                <Box bg="#f9f4ff" cl="blue" bc="#8246f3">
-                  <Circle>
-                    <img src={two} alt="" style={{ height: "40px" }} />
-                  </Circle>
-                  <h2>Check Rates</h2>
-                  <p>Know your gift card’s value at a glance.</p>
-                  <button>Check rates</button>
-                </Box>
+              <CardButton2>See Top Gift Cards</CardButton2>
+            </CardComponent2>
+          </Cards>
+          <Pending>
+            <div style={{ marginBottom: "10px" }}>Pending</div>
+            <PendingActions>
+              <div style={{ fontSize: "13px", fontWeight: "600" }}>
+                Set transaction pin
               </div>
-            </Held>
-          </div>
-          <P>Notifications</P>
-          <NottHold>
-            <Lists>
-              <p>Sylvia bought your gift card at $3000.00</p>
-            </Lists>
-          </NottHold>
-        </Mid>
-      </Container>
-    </div>
+              <PendSign>PENDING</PendSign>
+            </PendingActions>
+            <PendingActions>
+              <div style={{ fontSize: "13px", fontWeight: "600" }}>
+                Add default bank
+              </div>
+              <PendSign>PENDING</PendSign>
+            </PendingActions>
+          </Pending>
+        </InBody>
+      </Body>
+    </Container>
   );
 };
 
 export default BusinessHome;
 
-const P = styled.div`
-  margin-top: 40px;
-  margin-left: 40px;
-  font-size: 19px;
-  font-weight: bold;
-
-  @media screen and (max-width: 960px) {
-    margin: 0;
-    margin-left: 20px;
-    margin-top: 40px;
-  }
-`;
-
-const Transc = styled.div`
-  display: flex;
-`;
-
-const Up = styled.div`
-  width: 100%;
-  height: 80px;
-  background-color: #f9f4ff;
-  padding-left: 20px;
-  padding-top: 20px;
-
-  h3 {
-    margin: 0;
-  }
-`;
-
-const Lists = styled.div`
-  width: 50%;
-  height: 50px;
-  background-color: #f5f5f5;
-  border-radius: 10px;
-  display: flex;
-  align-items: center;
-
-  p {
-    margin: 0;
-    margin-left: 20px;
-    font-weight: 600;
-    @media screen and (max-width: 960px) {
-      margin: 0;
-      font-size: 14px;
-      margin-left: 10px;
-    }
-  }
-
-  @media screen and (max-width: 960px) {
-    margin: 0;
-    width: 90%;
-    margin-top: 15px;
-  }
-`;
-
-const NottHold = styled.div`
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
-  margin-bottom: 10px;
-`;
-
-const Circle = styled.div`
-  width: 55px;
-  height: 55px;
-  background-color: white;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-left: 40px;
-`;
-
-const Sec = styled.div`
-  margin-left: 570px;
-
-  @media screen and (max-width: 960px) {
-    margin: 0;
-    margin-left: 25px;
-    margin-top: 15px;
-  }
-  h1 {
-    margin: 0;
-    color: white;
-    font-size: 45px;
-
-    @media screen and (max-width: 960px) {
-      font-size: 23px;
-    }
-  }
-  button {
-    width: 150px;
-    height: 40px;
-    background-color: white;
-    border: 0;
-    color: blue;
-    border-radius: 10px;
-    margin-top: 25px;
-    font-weight: 600;
-
-    @media screen and (max-width: 960px) {
-      width: 63%;
-      height: 35px;
-      font-size: 13px;
-      margin-top: 20px;
-    }
-  }
-  p {
-    margin: 0;
-    margin-top: 3px;
-    font-size: 16px;
-    color: white;
-
-    @media screen and (max-width: 960px) {
-      margin: 0;
-      font-size: 14px;
-    }
-  }
-`;
-
-const Box = styled.div<{ bg: string; cl: string; bc: string }>`
-  width: 40%;
-  height: 250px;
-  background: ${({ bg }) => bg};
-  border-radius: 10px;
-  display: flex;
-  /* align-items: center; */
-  justify-content: center;
-  flex-direction: column;
-  @media screen and (max-width: 960px) {
-    width: 100%;
-    margin-bottom: 15px;
-  }
-
-  h2 {
-    margin: 0;
-    margin-top: 15px;
-    font-size: 36px;
-    margin-left: 40px;
-    color: ${({ cl }) => cl};
-
-    @media screen and (max-width: 960px) {
-      font-size: 25px;
-    }
-  }
-
-  p {
-    margin: 0;
-    margin-top: 7px;
-    font-size: 13px;
-    margin-left: 40px;
-  }
-
-  button {
-    margin-top: 20px;
-    width: 140px;
-    margin-left: 40px;
-    height: 40px;
-    background-color: ${({ bc }) => bc};
-    border: 0;
-    color: white;
-    font-weight: bold;
-    border-radius: 10px;
-  }
-`;
-
-const Held = styled.div`
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  margin-top: 25px;
-
-  /* align-items: center;
-  /* justify-content: center; */
-  /* flex-direction: row;  */
-  /* justify-content: space-between; */
-  gap: 20px;
-  margin-bottom: 10px;
-  /* margin-left: 265px; */
-
-  @media screen and (max-width: 960px) {
-    margin: 0;
-    width: 90%;
-    display: block;
-    margin-top: 25px;
-  }
-`;
-
-const Card = styled.div`
-  width: 70%;
-  height: 280px;
-  background-color: #8246f3;
-  border-radius: 10px;
-  margin-top: 30px;
-  margin-right: 200px;
-  display: flex;
-  align-items: center;
-  position: relative;
-  /* margin-left: 265px; */
-
-  @media screen and (max-width: 960px) {
-    margin: 0;
-    width: 90%;
-    display: block;
-    margin-top: 20px;
-  }
-
-  img {
-    position: absolute;
-    bottom: 1px;
-    height: 290px;
-
-    @media screen and (max-width: 960px) {
-      height: 61%;
-      /* width: 95%; */
-    }
-  }
-`;
-
-const Hold = styled.div`
-  display: flex;
-  color: blue;
-  align-items: center;
-  margin-top: 25px;
-  h5 {
-    font-size: 23px;
-    font-weight: lighter;
-    margin: 0;
-  }
-`;
-
-const Prof = styled.div`
-  background-color: #f9f4ff;
-  width: 80%;
-  height: 180px;
-  padding-top: 30px;
-  padding-left: 10px;
-  padding-right: 10px;
-  /* margin-left: 250px; */
-  z-index: 3;
-  position: sticky;
-  top: 0.2px;
-
-  @media screen and (max-width: 960px) {
-    margin: 0;
-    width: 100%;
-    padding-bottom: 23px;
-  }
-
-  p {
-    margin: 0;
-    font-size: 14px;
-  }
-
-  button {
-    width: 120px;
-    height: 45px;
-    background-color: #8246f3;
-    border: 0;
-    color: white;
-    font-size: 15px;
-    border-radius: 10px;
-    margin-left: 85%;
-    margin-bottom: 20px;
-
-    @media screen and (max-width: 500px) {
-      margin: 0;
-      margin-top: 20px;
-      width: 80%;
-    }
-  }
-`;
-
 const Container = styled.div`
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  width: 100vw;
-  /* background-color: red; */
-  overflow: hidden;
-`;
-const Mid = styled.div`
   width: 100%;
-  height: 100vh;
-  /* background: red; */
   /* overflow: hidden; */
-  display: flex;
-  /* justify-content: flex-start; */
-  overflow: hidden;
-  flex-direction: column;
+  color: #3d3d3d;
+  gap: 30px;
   overflow-y: scroll;
   ::-webkit-scrollbar {
     width: 6px;
@@ -426,26 +123,275 @@ const Mid = styled.div`
     background-color: silver;
     border-radius: 10px;
   }
-  h4 {
-    margin: 0;
-    margin-top: 40px;
-    margin-left: 40px;
-    /* margin-left: 300px; */
-    font-size: 19px;
-
-    @media screen and (max-width: 960px) {
-      margin: 0;
-      /* margin-left: 20px; */
-      margin-top: 40px;
-    }
+`;
+const Head = styled.div`
+  width: 100%;
+  max-height: 200px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  background-color: #f1f1f1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+`;
+const InHead = styled.div`
+  width: 90%;
+  display: flex;
+  flex-direction: column;
+  gap: 35px;
+`;
+const Message = styled.div`
+  font-size: 12px;
+  span {
+    font-weight: 600;
   }
 `;
-const Left = styled.div`
-  width: 30%;
-  height: 100vh;
-  /* background-color: gold; */
-  position: sticky;
-  top: 0;
-  overflow: hidden;
-  /* z-index: 3; */
+const SeeBalance = styled.div`
+  color: blue;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+`;
+const Viewer = styled.div`
+  display: flex;
+  gap: 30px;
+  align-items: center;
+  font-size: 17px;
+`;
+const Info = styled.div`
+  font-size: 20px;
+`;
+const BalanceDetails = styled.div``;
+const WithdrawButton = styled.button`
+  border-radius: 10px;
+  width: 250px;
+  color: white;
+  background-color: #a35ef7;
+  padding: 15px 60px;
+  border: none;
+  outline: none;
+  font-size: 17px;
+  margin-top: 30px;
+  transition: all 350ms;
+  :hover {
+    cursor: pointer;
+    background-color: #913cf9;
+  }
+`;
+const Body = styled.div`
+  width: 100%;
+  color: #3d3d3d;
+  margin-top: 30px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+`;
+const InBody = styled.div`
+  width: 90%;
+  display: flex;
+  flex-direction: column;
+  gap: 35px;
+`;
+const QuickActions = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+`;
+const QuickContain = styled.div`
+  width: calc(100% - 15px);
+  padding: 15px;
+  background-color: blueviolet;
+  border-radius: 20px;
+`;
+const QuickWrap = styled.div`
+  width: 95%;
+  height: 95%;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap-reverse;
+`;
+const QuickComponent = styled.div`
+  color: white;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  width: 100%;
+  @media screen and (min-width: 800px) {
+    width: 50%;
+  }
+`;
+const QuickImage = styled.div`
+  width: 100%;
+  @media screen and (min-width: 800px) {
+    width: 50%;
+  }
+  img {
+    width: 100%;
+  }
+`;
+const Button = styled.button`
+  max-width: 200px;
+  border-radius: 5px;
+  color: #a35ef7;
+  background-color: white;
+  border: none;
+  outline: none;
+  font-weight: bold;
+  padding: 10px 20px;
+  transition: all 350ms;
+  :hover {
+    cursor: pointer;
+    background-color: #913cf9;
+  }
+`;
+const HText = styled.div`
+  font-size: 19px;
+  @media screen and (min-width: 800px) {
+    font-size: 29px;
+  }
+`;
+const LText = styled.div`
+  font-size: 12px;
+  @media screen and (min-width: 800px) {
+    font-size: 22px;
+  }
+`;
+const Cards = styled.div`
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+`;
+
+const CardComponent = styled.div`
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  border-radius: 20px;
+  gap: 20px;
+  width: calc(100% - 20px);
+  padding: 20px;
+  background-color: #ffcee1ae;
+  @media screen and (min-width: 670px) {
+    width: calc(45% - 20px);
+  }
+`;
+const CardButton = styled.button`
+  max-width: 200px;
+  border-radius: 5px;
+  color: white;
+  background-color: orange;
+  border: none;
+  outline: none;
+  font-weight: bold;
+  padding: 10px 20px;
+  transition: all 350ms;
+  :hover {
+    cursor: pointer;
+    background-color: #913cf9;
+  }
+`;
+const HText1 = styled.div`
+  font-size: 25px;
+  font-weight: bold;
+  color: orange;
+  @media screen and (min-width: 800px) {
+    font-size: 29px;
+  }
+`;
+const LText1 = styled.div`
+  font-size: 12px;
+  color: #3d3d3d;
+
+  @media screen and (min-width: 800px) {
+    font-size: 22px;
+  }
+`;
+const CardImage = styled.div`
+  width: 100px;
+  img {
+    width: 100%;
+  }
+`;
+
+const CardComponent2 = styled.div`
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  border-radius: 20px;
+  gap: 20px;
+  width: calc(100% - 20px);
+  padding: 20px;
+  background-color: #cecfffad;
+  @media screen and (min-width: 670px) {
+    width: calc(45% - 20px);
+  }
+`;
+const CardButton2 = styled.button`
+  max-width: 200px;
+  border-radius: 5px;
+  color: white;
+  background-color: #2600ff;
+  border: none;
+  outline: none;
+  font-weight: bold;
+  padding: 10px 20px;
+  transition: all 350ms;
+  :hover {
+    cursor: pointer;
+    background-color: #913cf9;
+  }
+`;
+const HText2 = styled.div`
+  font-size: 25px;
+  font-weight: bold;
+  color: #2600ff;
+  @media screen and (min-width: 800px) {
+    font-size: 29px;
+  }
+`;
+const LText2 = styled.div`
+  font-size: 12px;
+  color: #3d3d3d;
+
+  @media screen and (min-width: 800px) {
+    font-size: 22px;
+  }
+`;
+const CardImage2 = styled.div`
+  width: 60px;
+  height: 60px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  background-color: white;
+  img {
+    width: 90%;
+    height: 90%;
+  }
+`;
+const Pending = styled.div``;
+const PendingActions = styled.div`
+  width: calc(100% - 20px);
+  padding: 10px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-radius: 5px;
+  background-color: #ececec;
+  margin-bottom: 10px;
+`;
+const PendSign = styled.div`
+  padding: 1px 7px;
+  border-radius: 2px;
+  color: white;
+  font-weight: 600;
+  background-color: orange;
+  font-size: 14px;
 `;

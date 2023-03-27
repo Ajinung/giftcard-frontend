@@ -76,7 +76,7 @@ const Wrapper = styled.div`
   width: calc(100vw - 250px);
   height: 100vh;
   display: flex;
-  overflow: hidden;
+  /* overflow: hidden; */
   @media screen and (min-width: 801px) and (max-width: 1051px) {
     width: calc(100% - 60px);
     height: 100vh;
