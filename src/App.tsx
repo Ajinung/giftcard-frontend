@@ -4,6 +4,7 @@ import PrivateRoutes from "./components/Private/Private";
 import { dummy_user } from "./components/Global/ReduxState";
 import BusinessRoutes from "./components/AllRoutes/BusinessRoute";
 import UserRoutes from "./components/AllRoutes/UserRoutes";
+import Notfound from "./components/Notfound/Notfound";
 function App() {
   return (
     <div>
