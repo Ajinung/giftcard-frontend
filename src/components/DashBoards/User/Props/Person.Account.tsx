@@ -8,30 +8,22 @@ const PersonalAccount = () => {
     <Container>
       <NameCard>
         <div style={{ display: "flex", alignItems: "center", gap: "20px" }}>
-          <Logo htmlFor="pics">
-            <BsFillPersonFill />
+          <Logo>
+            <p>i</p>
           </Logo>
+
           <Names>
             <div
               style={{
                 color: "#444343",
                 fontSize: "20px",
                 fontWeight: "bold",
-              }}>
+              }}
+            >
               Isaac
             </div>
             <div style={{ fontSize: "14px", color: "#082bf3" }}>@iceprince</div>
           </Names>
-        </div>
-        <div
-          style={{
-            display: "flex",
-            alignItems: "center",
-            gap: "20px",
-            color: "#646363",
-            fontSize: "18px",
-          }}>
-          <MdOutlineKeyboardArrowDown />
         </div>
       </NameCard>
       <div
@@ -41,7 +33,8 @@ const PersonalAccount = () => {
           display: "flex",
           flexDirection: "column",
           gap: "30px",
-        }}>
+        }}
+      >
         <Inputs value="Isaac" />
         <Inputs2 value="iceprince" />
         <Inputs2 placeholder="iceprince@gmail.com" />
@@ -54,6 +47,10 @@ const PersonalAccount = () => {
 };
 
 export default PersonalAccount;
+
+const Input = styled.input`
+  display: none;
+`;
 
 const Container = styled.div`
   width: 70%;
@@ -88,8 +85,9 @@ const NameCard = styled.div`
   padding-bottom: 30px;
   border-bottom: 2px solid #ececec;
 `;
-const Logo = styled.label`
-  padding: 20px;
+const Logo = styled.div`
+  width: 55px;
+  height: 60px;
   font-size: 23px;
   color: #082bf3;
   background-color: #ececec;
@@ -97,6 +95,10 @@ const Logo = styled.label`
   display: flex;
   justify-content: center;
   align-items: center;
+
+  p {
+    margin: 0;
+  }
 `;
 const Names = styled.div`
   display: flex;

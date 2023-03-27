@@ -26,7 +26,8 @@ const ViewCards = () => {
           <CardContainer>
             <NavLink
               style={{ textDecoration: "none" }}
-              to="/user-dashboard/card/id">
+              to="/user-dashboard/card/id"
+            >
               <Card
                 pic={<FaWallet />}
                 busyname="iTunes"
@@ -37,7 +38,8 @@ const ViewCards = () => {
             </NavLink>
             <NavLink
               style={{ textDecoration: "none" }}
-              to="/user-dashboard/card/id">
+              to="/user-dashboard/card/id"
+            >
               <Card
                 pic={<FaWallet />}
                 busyname="LexCorp"
@@ -48,7 +50,8 @@ const ViewCards = () => {
             </NavLink>
             <NavLink
               style={{ textDecoration: "none" }}
-              to="/user-dashboard/card/id">
+              to="/user-dashboard/card/id"
+            >
               <Card
                 pic={<FaWallet />}
                 busyname="Spotify"
@@ -59,7 +62,464 @@ const ViewCards = () => {
             </NavLink>
             <NavLink
               style={{ textDecoration: "none" }}
-              to="/user-dashboard/card/id">
+              to="/user-dashboard/card/id"
+            >
+              <Card
+                pic={<FaWallet />}
+                busyname="eaSports"
+                amount={10}
+                colour="#a30080"
+                code="889pbja"
+              />
+            </NavLink>
+            <NavLink
+              style={{ textDecoration: "none" }}
+              to="/user-dashboard/card/id"
+            >
+              <Card
+                pic={<FaWallet />}
+                busyname="eaSports"
+                amount={10}
+                colour="#a30080"
+                code="889pbja"
+              />
+            </NavLink>
+            <NavLink
+              style={{ textDecoration: "none" }}
+              to="/user-dashboard/card/id"
+            >
+              <Card
+                pic={<FaWallet />}
+                busyname="eaSports"
+                amount={10}
+                colour="#a30080"
+                code="889pbja"
+              />
+            </NavLink>
+            <NavLink
+              style={{ textDecoration: "none" }}
+              to="/user-dashboard/card/id"
+            >
+              <Card
+                pic={<FaWallet />}
+                busyname="eaSports"
+                amount={10}
+                colour="#a30080"
+                code="889pbja"
+              />
+            </NavLink>
+            <NavLink
+              style={{ textDecoration: "none" }}
+              to="/user-dashboard/card/id"
+            >
+              <Card
+                pic={<FaWallet />}
+                busyname="eaSports"
+                amount={10}
+                colour="#a30080"
+                code="889pbja"
+              />
+            </NavLink>
+            <NavLink
+              style={{ textDecoration: "none" }}
+              to="/user-dashboard/card/id"
+            >
+              <Card
+                pic={<FaWallet />}
+                busyname="eaSports"
+                amount={10}
+                colour="#a30080"
+                code="889pbja"
+              />
+            </NavLink>
+            <NavLink
+              style={{ textDecoration: "none" }}
+              to="/user-dashboard/card/id"
+            >
+              <Card
+                pic={<FaWallet />}
+                busyname="eaSports"
+                amount={10}
+                colour="#a30080"
+                code="889pbja"
+              />
+            </NavLink>
+            <NavLink
+              style={{ textDecoration: "none" }}
+              to="/user-dashboard/card/id"
+            >
+              <Card
+                pic={<FaWallet />}
+                busyname="eaSports"
+                amount={10}
+                colour="#a30080"
+                code="889pbja"
+              />
+            </NavLink>
+            <NavLink
+              style={{ textDecoration: "none" }}
+              to="/user-dashboard/card/id"
+            >
+              <Card
+                pic={<FaWallet />}
+                busyname="eaSports"
+                amount={10}
+                colour="#a30080"
+                code="889pbja"
+              />
+            </NavLink>
+            <NavLink
+              style={{ textDecoration: "none" }}
+              to="/user-dashboard/card/id"
+            >
+              <Card
+                pic={<FaWallet />}
+                busyname="eaSports"
+                amount={10}
+                colour="#a30080"
+                code="889pbja"
+              />
+            </NavLink>
+            <NavLink
+              style={{ textDecoration: "none" }}
+              to="/user-dashboard/card/id"
+            >
+              <Card
+                pic={<FaWallet />}
+                busyname="eaSports"
+                amount={10}
+                colour="#a30080"
+                code="889pbja"
+              />
+            </NavLink>
+            <NavLink
+              style={{ textDecoration: "none" }}
+              to="/user-dashboard/card/id"
+            >
+              <Card
+                pic={<FaWallet />}
+                busyname="eaSports"
+                amount={10}
+                colour="#a30080"
+                code="889pbja"
+              />
+            </NavLink>
+            <NavLink
+              style={{ textDecoration: "none" }}
+              to="/user-dashboard/card/id"
+            >
+              <Card
+                pic={<FaWallet />}
+                busyname="eaSports"
+                amount={10}
+                colour="#a30080"
+                code="889pbja"
+              />
+            </NavLink>
+            <NavLink
+              style={{ textDecoration: "none" }}
+              to="/user-dashboard/card/id"
+            >
+              <Card
+                pic={<FaWallet />}
+                busyname="eaSports"
+                amount={10}
+                colour="#a30080"
+                code="889pbja"
+              />
+            </NavLink>
+            <NavLink
+              style={{ textDecoration: "none" }}
+              to="/user-dashboard/card/id"
+            >
+              <Card
+                pic={<FaWallet />}
+                busyname="eaSports"
+                amount={10}
+                colour="#a30080"
+                code="889pbja"
+              />
+            </NavLink>
+            <NavLink
+              style={{ textDecoration: "none" }}
+              to="/user-dashboard/card/id"
+            >
+              <Card
+                pic={<FaWallet />}
+                busyname="eaSports"
+                amount={10}
+                colour="#a30080"
+                code="889pbja"
+              />
+            </NavLink>
+            <NavLink
+              style={{ textDecoration: "none" }}
+              to="/user-dashboard/card/id"
+            >
+              <Card
+                pic={<FaWallet />}
+                busyname="eaSports"
+                amount={10}
+                colour="#a30080"
+                code="889pbja"
+              />
+            </NavLink>
+            <NavLink
+              style={{ textDecoration: "none" }}
+              to="/user-dashboard/card/id"
+            >
+              <Card
+                pic={<FaWallet />}
+                busyname="eaSports"
+                amount={10}
+                colour="#a30080"
+                code="889pbja"
+              />
+            </NavLink>
+            <NavLink
+              style={{ textDecoration: "none" }}
+              to="/user-dashboard/card/id"
+            >
+              <Card
+                pic={<FaWallet />}
+                busyname="eaSports"
+                amount={10}
+                colour="#a30080"
+                code="889pbja"
+              />
+            </NavLink>
+            <NavLink
+              style={{ textDecoration: "none" }}
+              to="/user-dashboard/card/id"
+            >
+              <Card
+                pic={<FaWallet />}
+                busyname="eaSports"
+                amount={10}
+                colour="#a30080"
+                code="889pbja"
+              />
+            </NavLink>
+            <NavLink
+              style={{ textDecoration: "none" }}
+              to="/user-dashboard/card/id"
+            >
+              <Card
+                pic={<FaWallet />}
+                busyname="eaSports"
+                amount={10}
+                colour="#a30080"
+                code="889pbja"
+              />
+            </NavLink>
+            <NavLink
+              style={{ textDecoration: "none" }}
+              to="/user-dashboard/card/id"
+            >
+              <Card
+                pic={<FaWallet />}
+                busyname="eaSports"
+                amount={10}
+                colour="#a30080"
+                code="889pbja"
+              />
+            </NavLink>
+            <NavLink
+              style={{ textDecoration: "none" }}
+              to="/user-dashboard/card/id"
+            >
+              <Card
+                pic={<FaWallet />}
+                busyname="eaSports"
+                amount={10}
+                colour="#a30080"
+                code="889pbja"
+              />
+            </NavLink>
+            <NavLink
+              style={{ textDecoration: "none" }}
+              to="/user-dashboard/card/id"
+            >
+              <Card
+                pic={<FaWallet />}
+                busyname="eaSports"
+                amount={10}
+                colour="#a30080"
+                code="889pbja"
+              />
+            </NavLink>
+            <NavLink
+              style={{ textDecoration: "none" }}
+              to="/user-dashboard/card/id"
+            >
+              <Card
+                pic={<FaWallet />}
+                busyname="eaSports"
+                amount={10}
+                colour="#a30080"
+                code="889pbja"
+              />
+            </NavLink>
+            <NavLink
+              style={{ textDecoration: "none" }}
+              to="/user-dashboard/card/id"
+            >
+              <Card
+                pic={<FaWallet />}
+                busyname="eaSports"
+                amount={10}
+                colour="#a30080"
+                code="889pbja"
+              />
+            </NavLink>
+            <NavLink
+              style={{ textDecoration: "none" }}
+              to="/user-dashboard/card/id"
+            >
+              <Card
+                pic={<FaWallet />}
+                busyname="eaSports"
+                amount={10}
+                colour="#a30080"
+                code="889pbja"
+              />
+            </NavLink>
+            <NavLink
+              style={{ textDecoration: "none" }}
+              to="/user-dashboard/card/id"
+            >
+              <Card
+                pic={<FaWallet />}
+                busyname="eaSports"
+                amount={10}
+                colour="#a30080"
+                code="889pbja"
+              />
+            </NavLink>
+            <NavLink
+              style={{ textDecoration: "none" }}
+              to="/user-dashboard/card/id"
+            >
+              <Card
+                pic={<FaWallet />}
+                busyname="eaSports"
+                amount={10}
+                colour="#a30080"
+                code="889pbja"
+              />
+            </NavLink>
+            <NavLink
+              style={{ textDecoration: "none" }}
+              to="/user-dashboard/card/id"
+            >
+              <Card
+                pic={<FaWallet />}
+                busyname="eaSports"
+                amount={10}
+                colour="#a30080"
+                code="889pbja"
+              />
+            </NavLink>
+            <NavLink
+              style={{ textDecoration: "none" }}
+              to="/user-dashboard/card/id"
+            >
+              <Card
+                pic={<FaWallet />}
+                busyname="eaSports"
+                amount={10}
+                colour="#a30080"
+                code="889pbja"
+              />
+            </NavLink>
+            <NavLink
+              style={{ textDecoration: "none" }}
+              to="/user-dashboard/card/id"
+            >
+              <Card
+                pic={<FaWallet />}
+                busyname="eaSports"
+                amount={10}
+                colour="#a30080"
+                code="889pbja"
+              />
+            </NavLink>
+            <NavLink
+              style={{ textDecoration: "none" }}
+              to="/user-dashboard/card/id"
+            >
+              <Card
+                pic={<FaWallet />}
+                busyname="eaSports"
+                amount={10}
+                colour="#a30080"
+                code="889pbja"
+              />
+            </NavLink>
+            <NavLink
+              style={{ textDecoration: "none" }}
+              to="/user-dashboard/card/id"
+            >
+              <Card
+                pic={<FaWallet />}
+                busyname="eaSports"
+                amount={10}
+                colour="#a30080"
+                code="889pbja"
+              />
+            </NavLink>
+            <NavLink
+              style={{ textDecoration: "none" }}
+              to="/user-dashboard/card/id"
+            >
+              <Card
+                pic={<FaWallet />}
+                busyname="eaSports"
+                amount={10}
+                colour="#a30080"
+                code="889pbja"
+              />
+            </NavLink>
+            <NavLink
+              style={{ textDecoration: "none" }}
+              to="/user-dashboard/card/id"
+            >
+              <Card
+                pic={<FaWallet />}
+                busyname="eaSports"
+                amount={10}
+                colour="#a30080"
+                code="889pbja"
+              />
+            </NavLink>
+            <NavLink
+              style={{ textDecoration: "none" }}
+              to="/user-dashboard/card/id"
+            >
+              <Card
+                pic={<FaWallet />}
+                busyname="eaSports"
+                amount={10}
+                colour="#a30080"
+                code="889pbja"
+              />
+            </NavLink>
+            <NavLink
+              style={{ textDecoration: "none" }}
+              to="/user-dashboard/card/id"
+            >
+              <Card
+                pic={<FaWallet />}
+                busyname="eaSports"
+                amount={10}
+                colour="#a30080"
+                code="889pbja"
+              />
+            </NavLink>
+            <NavLink
+              style={{ textDecoration: "none" }}
+              to="/user-dashboard/card/id"
+            >
               <Card
                 pic={<FaWallet />}
                 busyname="eaSports"
@@ -77,7 +537,9 @@ const ViewCards = () => {
 
 export default ViewCards;
 
-const Container = styled.div``;
+const Container = styled.div`
+  /* overflow: scroll; */
+`;
 const CardContainer = styled.div`
   width: 100%;
   margin-top: 30px;

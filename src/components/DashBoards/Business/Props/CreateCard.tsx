@@ -1,74 +1,100 @@
+import axios from "axios";
 import React from "react";
 import styled from "styled-components";
+import Swal from "sweetalert2";
 import pic from "../../.././Images/trancard.svg";
+import { creatingCard } from "../../../Global/ReduxState";
+import { UseAppDispatch, useAppSelector } from "../../../Global/Store";
 
 const CreateCard = () => {
-  const [previewImage, setPreviewImage] = React.useState("");
-  const [image, setImage] = React.useState("");
-  const [colour, setColour] = React.useState("");
-  const [name, setName] = React.useState("");
-  const [amount, setAmount] = React.useState<number>(0);
+  const business = useAppSelector((state) => state.bizClient);
+  const dispatch = UseAppDispatch();
+  const URl = "https://giftcard-api.onrender.com";
 
-  const ImageOnchange = (e: any) => {
-    const file = e.target.files[0];
-    setImage(file);
-    const url = URL.createObjectURL(file);
-    setPreviewImage(url);
-    console.log(url);
+  const [colour, setColour] = React.useState("");
+  const [moneyWorth, setMoneyWorth] = React.useState<any>(0);
+
+  const postCard = async () => {
+    // e.preventDefault();
+
+    await axios
+      .post(`${URl}/api/generateyourgiftcard/${business?._id}`, {
+        moneyWorth: moneyWorth,
+        colour,
+      })
+      .then((res) => {
+        // console.log("this is res", res.data.data);
+
+        dispatch(creatingCard(res.data.data));
+        Swal.fire({
+          title: "Gift cards created successfully!",
+          //  html: "redirecting to login",
+        });
+      })
+      .catch((err) => {
+        console.log(`this is err from axios ${err}`);
+      });
   };
 
   return (
-    <div>
-      <Container>
-        <Wrapper>
-          <Update>
-            <Circle>
-              <Img src={previewImage ? previewImage : pic} />
-            </Circle>
-            <Input onChange={ImageOnchange} id="pix" type="file" />
-            <Button htmlFor="pix">Update company logo</Button>
-          </Update>
-          <Form>
-            <Inp
+    <Container>
+      <Wrapper>
+        <Update>
+          <Circle>
+            <Img src={business?.logo === "" ? pic : business?.logo} />
+          </Circle>
+        </Update>
+        <Form>
+          <Name>{business?.name}</Name>
+
+          <Inp
+            onChange={(e) => {
+              setMoneyWorth(e.target.value);
+            }}
+            value={moneyWorth}
+            placeholder="Amount"
+            type="number"
+          />
+          <Col>
+            <Choose>Select Color</Choose>
+            <Color
               onChange={(e) => {
-                setName(e.target.value);
+                setColour(e.target.value);
               }}
-              placeholder="Company Name"
-              type="text"
+              type="color"
             />
-            <Inp
-              onChange={(e) => {
-                setAmount(parseInt(e.target.value));
-              }}
-              placeholder="Amount"
-              type="number"
-            />
-            <Col>
-              <Choose>Select Color</Choose>
-              <Color
-                onChange={(e) => {
-                  setColour(e.target.value);
-                }}
-                type="color"
-              />
-            </Col>
-            {name === "" || amount <= 0 || colour === "" ? (
-              <Button2 bg="silver" cp="not-allowed">
-                Create Card
-              </Button2>
-            ) : (
-              <Button2 bg="blueviolet" cp="pointer">
-                Create Card
-              </Button2>
-            )}
-          </Form>
-        </Wrapper>
-      </Container>
-    </div>
+          </Col>
+          {moneyWorth <= 0 || colour === "" ? (
+            <Button2 bg="silver" cp="not-allowed">
+              Create Card
+            </Button2>
+          ) : (
+            <Button2 onClick={postCard} bg="blueviolet" cp="pointer">
+              Create Card
+            </Button2>
+          )}
+        </Form>
+      </Wrapper>
+    </Container>
   );
 };
 
 export default CreateCard;
+
+const Name = styled.h3`
+  border: none;
+  outline: none;
+  width: calc(100% - 20px);
+  padding-left: 20px;
+  height: 50px;
+  border-radius: 10px;
+  font-size: 16px;
+  background-color: #ececec92;
+  margin: 0;
+  display: flex;
+  align-items: center;
+  font-weight: 500;
+`;
 
 const Col = styled.div`
   display: flex;
@@ -207,4 +233,6 @@ const Wrapper = styled.div``;
 const Container = styled.div`
   width: 70%;
   margin-top: 20px;
+
+  margin-left: 20px;
 `;

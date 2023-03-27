@@ -1,9 +1,15 @@
 import { createSlice } from "@reduxjs/toolkit";
 import { PayloadAction } from "@reduxjs/toolkit/dist/createAction";
-import { BusinessData } from "../AllInterface/Allinterface";
+import {
+  BusinessData,
+  cardData,
+  UserDetails,
+} from "../AllInterface/Allinterface";
 
 const initialState = {
   bizClient: {} as BusinessData | null,
+  DataCard: {} as cardData | null,
+  userData: {} as UserDetails | null,
   //   Admin: {} as BusinessData | null,
 };
 
@@ -14,15 +20,26 @@ const ReduxState = createSlice({
     login: (state, { payload }: PayloadAction<BusinessData>) => {
       state.bizClient = payload;
     },
+    Userlogin: (state, { payload }: PayloadAction<UserDetails>) => {
+      state.userData = payload;
+    },
 
     logout: (state) => {
       state.bizClient = null;
     },
+
+    Userlogout: (state) => {
+      state.userData = null;
+    },
+    creatingCard: (state, { payload }: PayloadAction<cardData>) => {
+      state.DataCard = payload;
+    },
   },
 });
 
-export const dummy_user: any = { name: "Andrea", role: "admin" };
+// export const dummy_user: any = { name: "Andrea", role: "admin" };
 
-export const { login, logout } = ReduxState.actions;
+export const { login, logout, creatingCard, Userlogin, Userlogout } =
+  ReduxState.actions;
 
 export default ReduxState.reducer;

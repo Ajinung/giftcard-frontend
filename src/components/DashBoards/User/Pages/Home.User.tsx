@@ -9,8 +9,8 @@ const UserHome = () => {
         <HoldToggle>
           <h2>All Gift Cards</h2>
         </HoldToggle>
-        <ViewCards />
       </Head>
+      <ViewCards />
     </Container>
   );
 };
@@ -20,6 +20,17 @@ export default UserHome;
 const Container = styled.div`
   width: 100vw;
   overflow: hidden;
+  overflow-y: scroll;
+
+  ::-webkit-scrollbar {
+    width: 10px;
+    background-color: #f1f1f1;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background-color: #706e70;
+    border-radius: 20px;
+  }
 `;
 const Head = styled.div`
   width: calc(100% - 47px);
@@ -27,6 +38,9 @@ const Head = styled.div`
   padding-right: 23px;
   height: 150px;
   background-color: #f1f1f1;
+  position: sticky;
+  top: 0;
+  z-index: 1;
 `;
 const HoldToggle = styled.div`
   height: 100%;

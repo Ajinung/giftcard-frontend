@@ -51,6 +51,132 @@ const ViewCards = () => {
               colour="#a30080"
               code="889pbja"
             />
+            <Card
+              pic={<FaWallet />}
+              busyname="eaSports"
+              amount={10}
+              colour="#a30080"
+              code="889pbja"
+            />
+            <Card
+              pic={<FaWallet />}
+              busyname="eaSports"
+              amount={10}
+              colour="#a30080"
+              code="889pbja"
+            />
+            <Card
+              pic={<FaWallet />}
+              busyname="eaSports"
+              amount={10}
+              colour="#a30080"
+              code="889pbja"
+            />
+            <Card
+              pic={<FaWallet />}
+              busyname="eaSports"
+              amount={10}
+              colour="#a30080"
+              code="889pbja"
+            />
+            <Card
+              pic={<FaWallet />}
+              busyname="eaSports"
+              amount={10}
+              colour="#a30080"
+              code="889pbja"
+            />
+            <Card
+              pic={<FaWallet />}
+              busyname="eaSports"
+              amount={10}
+              colour="#a30080"
+              code="889pbja"
+            />
+            <Card
+              pic={<FaWallet />}
+              busyname="eaSports"
+              amount={10}
+              colour="#a30080"
+              code="889pbja"
+            />
+            <Card
+              pic={<FaWallet />}
+              busyname="eaSports"
+              amount={10}
+              colour="#a30080"
+              code="889pbja"
+            />
+            <Card
+              pic={<FaWallet />}
+              busyname="eaSports"
+              amount={10}
+              colour="#a30080"
+              code="889pbja"
+            />
+            <Card
+              pic={<FaWallet />}
+              busyname="eaSports"
+              amount={10}
+              colour="#a30080"
+              code="889pbja"
+            />
+            <Card
+              pic={<FaWallet />}
+              busyname="eaSports"
+              amount={10}
+              colour="#a30080"
+              code="889pbja"
+            />
+            <Card
+              pic={<FaWallet />}
+              busyname="eaSports"
+              amount={10}
+              colour="#a30080"
+              code="889pbja"
+            />
+            <Card
+              pic={<FaWallet />}
+              busyname="eaSports"
+              amount={10}
+              colour="#a30080"
+              code="889pbja"
+            />
+            <Card
+              pic={<FaWallet />}
+              busyname="eaSports"
+              amount={10}
+              colour="#a30080"
+              code="889pbja"
+            />
+            <Card
+              pic={<FaWallet />}
+              busyname="eaSports"
+              amount={10}
+              colour="#a30080"
+              code="889pbja"
+            />
+            <Card
+              pic={<FaWallet />}
+              busyname="eaSports"
+              amount={10}
+              colour="#a30080"
+              code="889pbja"
+            />
+            <Card
+              pic={<FaWallet />}
+              busyname="eaSports"
+              amount={10}
+              colour="#a30080"
+              code="889pbja"
+            />
+            <Card
+              pic={<FaWallet />}
+              busyname="eaSports"
+              amount={10}
+              colour="#a30080"
+              code="889pbja"
+            />
           </CardContainer>
         </div>
       )}

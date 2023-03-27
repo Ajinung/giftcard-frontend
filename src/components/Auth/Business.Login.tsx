@@ -56,7 +56,7 @@ const BizzLogin = () => {
         },
 
         willClose: () => {
-          navigate("/business/dashboard");
+          navigate("/dashboard");
         },
       });
     },

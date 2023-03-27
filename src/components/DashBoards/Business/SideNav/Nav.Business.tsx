@@ -11,6 +11,8 @@ import pic from "../../../Images/dashpng.png";
 import { TbArrowsLeftRight } from "react-icons/tb";
 import { TiStarFullOutline } from "react-icons/ti";
 import { useNavigate } from "react-router-dom";
+import { UseAppDispatch } from "../../../Global/Store";
+import { logout as LogOut } from "../../../Global/ReduxState";
 
 const SideNav = () => {
   const [home, setHome] = React.useState(true);
@@ -20,12 +22,14 @@ const SideNav = () => {
   const [support, setSupport] = React.useState(true);
   const [account, setAccount] = React.useState(true);
   const [logout, setLogout] = React.useState(true);
+
   const navigate = useNavigate();
+  const dispatch = UseAppDispatch();
 
   return (
     <div>
       <Container>
-        <Logo>GIFTHAVEN</Logo>
+        <Logo>MAVERICKS</Logo>
         <br />
         <br />
         <br />
@@ -40,7 +44,8 @@ const SideNav = () => {
               setAccount(true);
               setLogout(true);
               navigate("/dashboard");
-            }}>
+            }}
+          >
             <NavBars
               pic={<HiHome />}
               routeName="Home"
@@ -59,7 +64,8 @@ const SideNav = () => {
               setAccount(true);
               setLogout(true);
               navigate("/dashboard/giftcard");
-            }}>
+            }}
+          >
             <NavBars
               pic={<MdInsertChart />}
               routeName="Gift Cards"
@@ -78,7 +84,8 @@ const SideNav = () => {
               setAccount(true);
               setLogout(true);
               navigate("/dashboard/wallet");
-            }}>
+            }}
+          >
             <NavBars
               pic={<FaWallet />}
               routeName="Wallet"
@@ -97,7 +104,8 @@ const SideNav = () => {
               setAccount(true);
               setLogout(true);
               navigate("/dashboard/notify");
-            }}>
+            }}
+          >
             <NavBars
               pic={<HiBell />}
               routeName="Notification"
@@ -116,7 +124,8 @@ const SideNav = () => {
               setAccount(true);
               setLogout(true);
               navigate("/dashboard/support");
-            }}>
+            }}
+          >
             <NavBars
               pic={<AiFillMessage />}
               routeName="Support"
@@ -135,7 +144,8 @@ const SideNav = () => {
               setAccount(false);
               setLogout(true);
               navigate("/dashboard/account");
-            }}>
+            }}
+          >
             <NavBars
               pic={<BsPersonFill />}
               routeName="Account"
@@ -154,7 +164,10 @@ const SideNav = () => {
             setSupport(true);
             setAccount(true);
             setLogout(false);
-          }}>
+            dispatch(LogOut());
+            navigate("/");
+          }}
+        >
           <NavBars
             pic={<CiLogout />}
             routeName="Log Out"

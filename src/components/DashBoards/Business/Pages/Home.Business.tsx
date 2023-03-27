@@ -23,7 +23,8 @@ const BusinessHome = () => {
                 <div
                   onClick={() => {
                     setShow(!show);
-                  }}>
+                  }}
+                >
                   {show ? (
                     <AiFillEye style={{ marginTop: "5px", fontSize: "30px" }} />
                   ) : (
@@ -133,17 +134,28 @@ const Head = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
+  position: sticky;
+  top: 0;
+  z-index: 1;
 `;
 const InHead = styled.div`
   width: 90%;
   display: flex;
   flex-direction: column;
-  gap: 35px;
+  gap: 30px;
+
+  @media screen and (max-width: 799px) {
+    gap: 15px;
+  }
 `;
 const Message = styled.div`
-  font-size: 12px;
+  font-size: 18px;
   span {
     font-weight: 600;
+  }
+
+  @media screen and (max-width: 799px) {
+    /* margin-top: 10px; */
   }
 `;
 const SeeBalance = styled.div`
@@ -202,9 +214,10 @@ const QuickActions = styled.div`
 `;
 const QuickContain = styled.div`
   width: calc(100% - 15px);
-  padding: 15px;
+
   background-color: blueviolet;
   border-radius: 20px;
+  /* position: relative; */
 `;
 const QuickWrap = styled.div`
   width: 95%;
@@ -222,9 +235,19 @@ const QuickComponent = styled.div`
   @media screen and (min-width: 800px) {
     width: 50%;
   }
+  @media screen and (max-width: 799px) {
+    width: 60%;
+    /* background-color: #2c4a72; */
+    position: relative;
+    top: 50px;
+    left: 30px;
+  }
 `;
 const QuickImage = styled.div`
   width: 100%;
+  position: relative;
+  bottom: -6px;
+  /* left: 30px; */
   @media screen and (min-width: 800px) {
     width: 50%;
   }
@@ -240,17 +263,22 @@ const Button = styled.button`
   border: none;
   outline: none;
   font-weight: bold;
+  font-size: 17px;
   padding: 10px 20px;
   transition: all 350ms;
   :hover {
     cursor: pointer;
-    background-color: #913cf9;
+    /* background-color: #913cf9; */
   }
 `;
 const HText = styled.div`
   font-size: 19px;
   @media screen and (min-width: 800px) {
     font-size: 29px;
+  }
+
+  @media screen and (max-width: 799px) {
+    font-size: 30px;
   }
 `;
 const LText = styled.div`
@@ -361,6 +389,10 @@ const LText2 = styled.div`
 
   @media screen and (min-width: 800px) {
     font-size: 22px;
+  }
+
+  @media screen and (max-width: 799px) {
+    font-size: 17px;
   }
 `;
 const CardImage2 = styled.div`

@@ -169,6 +169,7 @@ const BizzSignUp = () => {
                 {...register("password")}
                 placeholder="Password"
                 required
+                type="password"
               />
               <Erro>{errors?.password && errors?.password?.message}</Erro>
             </Inputs>
@@ -184,6 +185,7 @@ const BizzSignUp = () => {
                 {...register("confirmPassword")}
                 placeholder="Confirm password"
                 required
+                type="password"
               />
               <Erro>
                 {errors?.confirmPassword && errors?.confirmPassword?.message}
@@ -201,7 +203,8 @@ const BizzSignUp = () => {
                 margin: "0",
                 marginLeft: "10px",
                 fontSize: "15px",
-              }}>
+              }}
+            >
               I agree to MAVERICK'S
               <span style={{ color: "blue" }}>Terms and Conditions</span> &
               <span style={{ color: "blue" }}>Privacy Policy</span>.

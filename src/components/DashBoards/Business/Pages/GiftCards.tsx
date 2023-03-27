@@ -18,7 +18,8 @@ const BusinessCard = () => {
                 setSecure(false);
               }}
               cls={person ? "#2343f7" : "#585858"}
-              bdb={person ? "3px solid #2343f7" : ""}>
+              bdb={person ? "3px solid #2343f7" : ""}
+            >
               New Gift Card
             </Toggle>
             <Toggle
@@ -27,13 +28,14 @@ const BusinessCard = () => {
                 setSecure(true);
               }}
               cls={person ? "#585858" : "#2343f7"}
-              bdb={person ? "" : "3px solid #2343f7"}>
+              bdb={person ? "" : "3px solid #2343f7"}
+            >
               Gift Cards
             </Toggle>
           </ToggleHold>
         </HoldToggle>
-        {person ? <CreateCard /> : <ViewCards />}
-      </Head>
+      </Head>{" "}
+      {person ? <CreateCard /> : <ViewCards />}
     </Container>
   );
 };
@@ -58,6 +60,9 @@ const Head = styled.div`
   padding-right: 23px;
   height: 150px;
   background-color: #f1f1f1;
+  position: sticky;
+  top: 0;
+  z-index: 1;
 `;
 const HoldToggle = styled.div`
   height: 100%;
@@ -65,6 +70,7 @@ const HoldToggle = styled.div`
   flex-direction: column;
   justify-content: space-between;
   color: #5e5d5d;
+
   h2 {
     font-size: 17px;
     font-weight: 600;

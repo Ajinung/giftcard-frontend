@@ -10,6 +10,8 @@ import { CiLogout } from "react-icons/ci";
 import { BsPersonFill } from "react-icons/bs";
 import { TbArrowsLeftRight } from "react-icons/tb";
 import { TiStarFullOutline } from "react-icons/ti";
+import { UseAppDispatch } from "../../../Global/Store";
+import { logout as LogOut } from "../../../Global/ReduxState";
 
 const BusinessMobileNavs = () => {
   const [home, setHome] = React.useState(true);
@@ -21,6 +23,7 @@ const BusinessMobileNavs = () => {
   const [logout, setLogout] = React.useState(true);
   const [show, setShow] = React.useState(true);
   const navigate = useNavigate();
+  const dispatch = UseAppDispatch();
   return (
     <div>
       <Container>
@@ -35,7 +38,8 @@ const BusinessMobileNavs = () => {
               setAccount(true);
               setLogout(true);
               navigate("/dashboard");
-            }}>
+            }}
+          >
             <MobileBars
               pic={<HiHome />}
               routeName="Home"
@@ -54,7 +58,8 @@ const BusinessMobileNavs = () => {
               setAccount(true);
               setLogout(true);
               navigate("/dashboard/giftcard");
-            }}>
+            }}
+          >
             <MobileBars
               pic={<MdInsertChart />}
               routeName="Gift Cards"
@@ -73,7 +78,8 @@ const BusinessMobileNavs = () => {
               setAccount(true);
               setLogout(true);
               navigate("/dashboard/wallet");
-            }}>
+            }}
+          >
             <MobileBars
               pic={<FaWallet />}
               routeName="Wallet"
@@ -92,7 +98,8 @@ const BusinessMobileNavs = () => {
               setAccount(true);
               setLogout(true);
               navigate("/dashboard/notify");
-            }}>
+            }}
+          >
             <MobileBars
               pic={<HiBell />}
               routeName="Notification"
@@ -111,7 +118,8 @@ const BusinessMobileNavs = () => {
               setAccount(true);
               setLogout(true);
               navigate("/dashboard/support");
-            }}>
+            }}
+          >
             <MobileBars
               pic={<AiFillMessage />}
               routeName="Support"
@@ -130,7 +138,8 @@ const BusinessMobileNavs = () => {
               setAccount(false);
               setLogout(true);
               navigate("/dashboard/account");
-            }}>
+            }}
+          >
             <MobileBars
               pic={<BsPersonFill />}
               routeName="Account"
@@ -148,7 +157,10 @@ const BusinessMobileNavs = () => {
               setSupport(true);
               setAccount(true);
               setLogout(false);
-            }}>
+              dispatch(LogOut());
+              navigate("/");
+            }}
+          >
             <MobileBars
               pic={<CiLogout />}
               routeName="Log Out"
